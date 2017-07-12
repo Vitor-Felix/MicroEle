@@ -1,0 +1,1387 @@
+-- VHDL structural description generated from `somador_4bit_genlib_ocp_4_rows_nero`
+--		date : Mon Jul 28 15:57:53 2014
+
+
+-- Entity Declaration
+
+ENTITY somador_4bit_genlib_ocp_4_rows_nero IS
+  PORT (
+  vss : linkage BIT ;	-- vss
+  vdd : linkage BIT ;	-- vdd
+  s : linkage BIT_VECTOR(3 DOWNTO 0) ;	-- s
+  c_4 : linkage BIT ;	-- c_4
+  c_0 : linkage BIT ;	-- c_0
+  b : linkage BIT_VECTOR(3 DOWNTO 0) ;	-- b
+  a : linkage BIT_VECTOR(3 DOWNTO 0) 	-- a
+  );
+END somador_4bit_genlib_ocp_4_rows_nero;
+
+-- Architecture Declaration
+
+ARCHITECTURE VST OF somador_4bit_genlib_ocp_4_rows_nero IS
+  COMPONENT inv_x1
+    port (
+    vss : linkage BIT ;	-- vss
+    vdd : linkage BIT ;	-- vdd
+    nq : linkage BIT ;	-- nq
+    i : linkage BIT 	-- i
+    );
+  END COMPONENT;
+
+  COMPONENT na2_x1
+    port (
+    vss : linkage BIT ;	-- vss
+    vdd : linkage BIT ;	-- vdd
+    nq : linkage BIT ;	-- nq
+    i1 : linkage BIT ;	-- i1
+    i0 : linkage BIT 	-- i0
+    );
+  END COMPONENT;
+
+  COMPONENT tie_x0
+    port (
+    vss : linkage BIT ;	-- vss
+    vdd : linkage BIT 	-- vdd
+    );
+  END COMPONENT;
+
+  SIGNAL somador_1_sinv4 : BIT;	-- somador_1.sinv4
+  SIGNAL somador_1_snand15 : BIT;	-- somador_1.snand15
+  SIGNAL somador_0_sinv12 : BIT;	-- somador_0.sinv12
+  SIGNAL somador_0_snand14 : BIT;	-- somador_0.snand14
+  SIGNAL somador_0_snand2 : BIT;	-- somador_0.snand2
+  SIGNAL somador_3_snand13 : BIT;	-- somador_3.snand13
+  SIGNAL somador_2_sinv15 : BIT;	-- somador_2.sinv15
+  SIGNAL somador_2_sinv14 : BIT;	-- somador_2.sinv14
+  SIGNAL somador_2_snand20 : BIT;	-- somador_2.snand20
+  SIGNAL somador_2_sinv10 : BIT;	-- somador_2.sinv10
+  SIGNAL somador_2_snand16 : BIT;	-- somador_2.snand16
+  SIGNAL somador_2_snand2 : BIT;	-- somador_2.snand2
+  SIGNAL somador_1_snand7 : BIT;	-- somador_1.snand7
+  SIGNAL somador_1_snand8 : BIT;	-- somador_1.snand8
+  SIGNAL somador_1_snand13 : BIT;	-- somador_1.snand13
+  SIGNAL somador_1_snand5 : BIT;	-- somador_1.snand5
+  SIGNAL somador_1_sinv11 : BIT;	-- somador_1.sinv11
+  SIGNAL somador_1_snand17 : BIT;	-- somador_1.snand17
+  SIGNAL somador_1_snand16 : BIT;	-- somador_1.snand16
+  SIGNAL somador_1_snand12 : BIT;	-- somador_1.snand12
+  SIGNAL somador_1_sinv10 : BIT;	-- somador_1.sinv10
+  SIGNAL somador_1_snand20 : BIT;	-- somador_1.snand20
+  SIGNAL somador_0_sinv5 : BIT;	-- somador_0.sinv5
+  SIGNAL somador_0_snand18 : BIT;	-- somador_0.snand18
+  SIGNAL somador_0_sinv3 : BIT;	-- somador_0.sinv3
+  SIGNAL somador_0_snand3 : BIT;	-- somador_0.snand3
+  SIGNAL somador_0_sinv7 : BIT;	-- somador_0.sinv7
+  SIGNAL somador_3_snand15 : BIT;	-- somador_3.snand15
+  SIGNAL somador_3_snand18 : BIT;	-- somador_3.snand18
+  SIGNAL somador_3_snand21 : BIT;	-- somador_3.snand21
+  SIGNAL somador_3_snand8 : BIT;	-- somador_3.snand8
+  SIGNAL somador_3_snand7 : BIT;	-- somador_3.snand7
+  SIGNAL somador_2_snand21 : BIT;	-- somador_2.snand21
+  SIGNAL somador_2_snand3 : BIT;	-- somador_2.snand3
+  SIGNAL somador_2_sinv2 : BIT;	-- somador_2.sinv2
+  SIGNAL somador_2_sinv6 : BIT;	-- somador_2.sinv6
+  SIGNAL somador_2_snand7 : BIT;	-- somador_2.snand7
+  SIGNAL somador_1_sinv13 : BIT;	-- somador_1.sinv13
+  SIGNAL somador_0_sinv11 : BIT;	-- somador_0.sinv11
+  SIGNAL somador_3_sinv13 : BIT;	-- somador_3.sinv13
+  SIGNAL somador_3_sinv3 : BIT;	-- somador_3.sinv3
+  SIGNAL somador_2_sinv5 : BIT;	-- somador_2.sinv5
+  SIGNAL somador_1_snand10 : BIT;	-- somador_1.snand10
+  SIGNAL somador_1_sinv9 : BIT;	-- somador_1.sinv9
+  SIGNAL somador_1_sinv7 : BIT;	-- somador_1.sinv7
+  SIGNAL somador_1_snand14 : BIT;	-- somador_1.snand14
+  SIGNAL somador_1_sinv1 : BIT;	-- somador_1.sinv1
+  SIGNAL somador_1_snand6 : BIT;	-- somador_1.snand6
+  SIGNAL somador_1_snand2 : BIT;	-- somador_1.snand2
+  SIGNAL somador_1_sinv5 : BIT;	-- somador_1.sinv5
+  SIGNAL somador_0_snand17 : BIT;	-- somador_0.snand17
+  SIGNAL somador_0_snand19 : BIT;	-- somador_0.snand19
+  SIGNAL somador_0_snand16 : BIT;	-- somador_0.snand16
+  SIGNAL somador_0_sinv10 : BIT;	-- somador_0.sinv10
+  SIGNAL somador_0_snand13 : BIT;	-- somador_0.snand13
+  SIGNAL somador_0_snand12 : BIT;	-- somador_0.snand12
+  SIGNAL somador_0_sinv2 : BIT;	-- somador_0.sinv2
+  SIGNAL somador_3_snand19 : BIT;	-- somador_3.snand19
+  SIGNAL somador_3_snand14 : BIT;	-- somador_3.snand14
+  SIGNAL somador_3_sinv12 : BIT;	-- somador_3.sinv12
+  SIGNAL somador_3_snand16 : BIT;	-- somador_3.snand16
+  SIGNAL somador_3_snand20 : BIT;	-- somador_3.snand20
+  SIGNAL somador_3_snand3 : BIT;	-- somador_3.snand3
+  SIGNAL somador_3_sinv6 : BIT;	-- somador_3.sinv6
+  SIGNAL somador_3_sinv7 : BIT;	-- somador_3.sinv7
+  SIGNAL somador_3_sinv2 : BIT;	-- somador_3.sinv2
+  SIGNAL somador_3_snand1 : BIT;	-- somador_3.snand1
+  SIGNAL somador_2_snand19 : BIT;	-- somador_2.snand19
+  SIGNAL somador_3_snand10 : BIT;	-- somador_3.snand10
+  SIGNAL somador_2_snand12 : BIT;	-- somador_2.snand12
+  SIGNAL somador_2_snand17 : BIT;	-- somador_2.snand17
+  SIGNAL somador_2_sinv13 : BIT;	-- somador_2.sinv13
+  SIGNAL somador_2_sinv7 : BIT;	-- somador_2.sinv7
+  SIGNAL somador_2_snand4 : BIT;	-- somador_2.snand4
+  SIGNAL somador_2_snand8 : BIT;	-- somador_2.snand8
+  SIGNAL somador_2_snand10 : BIT;	-- somador_2.snand10
+  SIGNAL somador_1_sinv3 : BIT;	-- somador_1.sinv3
+  SIGNAL somador_1_snand3 : BIT;	-- somador_1.snand3
+  SIGNAL somador_1_sinv6 : BIT;	-- somador_1.sinv6
+  SIGNAL somador_1_snand4 : BIT;	-- somador_1.snand4
+  SIGNAL c_1 : BIT;	-- c_1
+  SIGNAL somador_1_sinv2 : BIT;	-- somador_1.sinv2
+  SIGNAL somador_1_snand1 : BIT;	-- somador_1.snand1
+  SIGNAL somador_1_sinv12 : BIT;	-- somador_1.sinv12
+  SIGNAL somador_1_snand9 : BIT;	-- somador_1.snand9
+  SIGNAL somador_1_sinv8 : BIT;	-- somador_1.sinv8
+  SIGNAL somador_1_snand19 : BIT;	-- somador_1.snand19
+  SIGNAL somador_1_snand21 : BIT;	-- somador_1.snand21
+  SIGNAL somador_1_sinv15 : BIT;	-- somador_1.sinv15
+  SIGNAL somador_1_snand18 : BIT;	-- somador_1.snand18
+  SIGNAL somador_0_snand20 : BIT;	-- somador_0.snand20
+  SIGNAL somador_0_sinv14 : BIT;	-- somador_0.sinv14
+  SIGNAL somador_0_snand15 : BIT;	-- somador_0.snand15
+  SIGNAL somador_0_sinv13 : BIT;	-- somador_0.sinv13
+  SIGNAL somador_0_sinv15 : BIT;	-- somador_0.sinv15
+  SIGNAL somador_1_sinv14 : BIT;	-- somador_1.sinv14
+  SIGNAL somador_0_snand6 : BIT;	-- somador_0.snand6
+  SIGNAL somador_0_snand21 : BIT;	-- somador_0.snand21
+  SIGNAL somador_0_sinv1 : BIT;	-- somador_0.sinv1
+  SIGNAL somador_0_snand5 : BIT;	-- somador_0.snand5
+  SIGNAL somador_0_snand9 : BIT;	-- somador_0.snand9
+  SIGNAL somador_0_snand4 : BIT;	-- somador_0.snand4
+  SIGNAL somador_0_sinv9 : BIT;	-- somador_0.sinv9
+  SIGNAL somador_0_sinv4 : BIT;	-- somador_0.sinv4
+  SIGNAL somador_0_sinv8 : BIT;	-- somador_0.sinv8
+  SIGNAL somador_0_snand1 : BIT;	-- somador_0.snand1
+  SIGNAL somador_0_snand8 : BIT;	-- somador_0.snand8
+  SIGNAL somador_0_snand10 : BIT;	-- somador_0.snand10
+  SIGNAL somador_3_sinv10 : BIT;	-- somador_3.sinv10
+  SIGNAL somador_0_snand7 : BIT;	-- somador_0.snand7
+  SIGNAL somador_3_snand12 : BIT;	-- somador_3.snand12
+  SIGNAL somador_0_sinv6 : BIT;	-- somador_0.sinv6
+  SIGNAL somador_3_snand4 : BIT;	-- somador_3.snand4
+  SIGNAL c_3 : BIT;	-- c_3
+  SIGNAL somador_3_sinv5 : BIT;	-- somador_3.sinv5
+  SIGNAL somador_3_snand2 : BIT;	-- somador_3.snand2
+  SIGNAL somador_3_snand17 : BIT;	-- somador_3.snand17
+  SIGNAL somador_3_sinv14 : BIT;	-- somador_3.sinv14
+  SIGNAL somador_3_sinv11 : BIT;	-- somador_3.sinv11
+  SIGNAL somador_3_sinv15 : BIT;	-- somador_3.sinv15
+  SIGNAL somador_3_sinv4 : BIT;	-- somador_3.sinv4
+  SIGNAL somador_3_sinv1 : BIT;	-- somador_3.sinv1
+  SIGNAL somador_3_snand5 : BIT;	-- somador_3.snand5
+  SIGNAL somador_3_snand6 : BIT;	-- somador_3.snand6
+  SIGNAL somador_3_snand9 : BIT;	-- somador_3.snand9
+  SIGNAL somador_2_snand18 : BIT;	-- somador_2.snand18
+  SIGNAL somador_2_snand15 : BIT;	-- somador_2.snand15
+  SIGNAL c_2 : BIT;	-- c_2
+  SIGNAL somador_3_sinv8 : BIT;	-- somador_3.sinv8
+  SIGNAL somador_3_sinv9 : BIT;	-- somador_3.sinv9
+  SIGNAL somador_2_snand13 : BIT;	-- somador_2.snand13
+  SIGNAL somador_2_sinv11 : BIT;	-- somador_2.sinv11
+  SIGNAL somador_2_sinv12 : BIT;	-- somador_2.sinv12
+  SIGNAL somador_2_snand1 : BIT;	-- somador_2.snand1
+  SIGNAL somador_2_sinv4 : BIT;	-- somador_2.sinv4
+  SIGNAL somador_2_sinv1 : BIT;	-- somador_2.sinv1
+  SIGNAL somador_2_sinv3 : BIT;	-- somador_2.sinv3
+  SIGNAL somador_2_snand14 : BIT;	-- somador_2.snand14
+  SIGNAL somador_2_sinv8 : BIT;	-- somador_2.sinv8
+  SIGNAL somador_2_sinv9 : BIT;	-- somador_2.sinv9
+  SIGNAL somador_2_snand6 : BIT;	-- somador_2.snand6
+  SIGNAL somador_2_snand9 : BIT;	-- somador_2.snand9
+  SIGNAL somador_2_snand5 : BIT;	-- somador_2.snand5
+
+BEGIN
+
+  somador_2_nand9 : na2_x1
+    PORT MAP (
+    i0 => somador_2_snand5,
+    i1 => somador_2_snand6,
+    nq => somador_2_snand9,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv8 : inv_x1
+    PORT MAP (
+    i => somador_2_snand9,
+    nq => somador_2_sinv8,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand11 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv8,
+    i1 => somador_2_sinv9,
+    nq => s(2),
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand14 : na2_x1
+    PORT MAP (
+    i0 => b(2),
+    i1 => somador_2_sinv3,
+    nq => somador_2_snand14,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand5 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv1,
+    i1 => somador_2_sinv4,
+    nq => somador_2_snand5,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv4 : inv_x1
+    PORT MAP (
+    i => somador_2_snand1,
+    nq => somador_2_sinv4,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv12 : inv_x1
+    PORT MAP (
+    i => somador_2_snand14,
+    nq => somador_2_sinv12,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv11 : inv_x1
+    PORT MAP (
+    i => somador_2_snand13,
+    nq => somador_2_sinv11,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand15 : na2_x1
+    PORT MAP (
+    i0 => b(2),
+    i1 => c_2,
+    nq => somador_2_snand15,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand11 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv8,
+    i1 => somador_3_sinv9,
+    nq => s(3),
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv8 : inv_x1
+    PORT MAP (
+    i => somador_3_snand9,
+    nq => somador_3_sinv8,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand18 : na2_x1
+    PORT MAP (
+    i0 => a(2),
+    i1 => somador_2_sinv12,
+    nq => somador_2_snand18,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand9 : na2_x1
+    PORT MAP (
+    i0 => somador_3_snand5,
+    i1 => somador_3_snand6,
+    nq => somador_3_snand9,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv1 : inv_x1
+    PORT MAP (
+    i => a(3),
+    nq => somador_3_sinv1,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand5 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv1,
+    i1 => somador_3_sinv4,
+    nq => somador_3_snand5,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand17 : na2_x1
+    PORT MAP (
+    i0 => a(3),
+    i1 => somador_3_sinv11,
+    nq => somador_3_snand17,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand22 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv14,
+    i1 => somador_3_sinv15,
+    nq => c_4,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand6 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv1,
+    i1 => somador_3_sinv5,
+    nq => somador_3_snand6,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv5 : inv_x1
+    PORT MAP (
+    i => somador_3_snand2,
+    nq => somador_3_sinv5,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand4 : na2_x1
+    PORT MAP (
+    i0 => b(3),
+    i1 => c_3,
+    nq => somador_3_snand4,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv10 : inv_x1
+    PORT MAP (
+    i => somador_3_snand12,
+    nq => somador_3_sinv10,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand7 : na2_x1
+    PORT MAP (
+    i0 => a(0),
+    i1 => somador_0_sinv6,
+    nq => somador_0_snand7,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand10 : na2_x1
+    PORT MAP (
+    i0 => somador_0_snand7,
+    i1 => somador_0_snand8,
+    nq => somador_0_snand10,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand12 : na2_x1
+    PORT MAP (
+    i0 => b(3),
+    i1 => c_3,
+    nq => somador_3_snand12,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv4 : inv_x1
+    PORT MAP (
+    i => somador_0_snand1,
+    nq => somador_0_sinv4,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand11 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv8,
+    i1 => somador_0_sinv9,
+    nq => s(0),
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand4 : na2_x1
+    PORT MAP (
+    i0 => b(0),
+    i1 => c_0,
+    nq => somador_0_snand4,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv8 : inv_x1
+    PORT MAP (
+    i => somador_0_snand9,
+    nq => somador_0_sinv8,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand5 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv1,
+    i1 => somador_0_sinv4,
+    nq => somador_0_snand5,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand9 : na2_x1
+    PORT MAP (
+    i0 => somador_0_snand5,
+    i1 => somador_0_snand6,
+    nq => somador_0_snand9,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv15 : inv_x1
+    PORT MAP (
+    i => somador_0_snand21,
+    nq => somador_0_sinv15,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv13 : inv_x1
+    PORT MAP (
+    i => somador_0_snand15,
+    nq => somador_0_sinv13,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand22 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv14,
+    i1 => somador_1_sinv15,
+    nq => c_2,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv14 : inv_x1
+    PORT MAP (
+    i => somador_0_snand20,
+    nq => somador_0_sinv14,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand21 : na2_x1
+    PORT MAP (
+    i0 => somador_1_snand18,
+    i1 => somador_1_snand19,
+    nq => somador_1_snand21,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv15 : inv_x1
+    PORT MAP (
+    i => somador_1_snand21,
+    nq => somador_1_sinv15,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv8 : inv_x1
+    PORT MAP (
+    i => somador_1_snand9,
+    nq => somador_1_sinv8,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand18 : na2_x1
+    PORT MAP (
+    i0 => a(1),
+    i1 => somador_1_sinv12,
+    nq => somador_1_snand18,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand4 : na2_x1
+    PORT MAP (
+    i0 => b(1),
+    i1 => c_1,
+    nq => somador_1_snand4,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand1 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv2,
+    i1 => c_1,
+    nq => somador_1_snand1,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv6 : inv_x1
+    PORT MAP (
+    i => somador_1_snand3,
+    nq => somador_1_sinv6,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand3 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv2,
+    i1 => somador_1_sinv3,
+    nq => somador_1_snand3,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv9 : inv_x1
+    PORT MAP (
+    i => somador_2_snand10,
+    nq => somador_2_sinv9,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand8 : na2_x1
+    PORT MAP (
+    i0 => a(2),
+    i1 => somador_2_sinv7,
+    nq => somador_2_snand8,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand6 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv1,
+    i1 => somador_2_sinv5,
+    nq => somador_2_snand6,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand4 : na2_x1
+    PORT MAP (
+    i0 => b(2),
+    i1 => c_2,
+    nq => somador_2_snand4,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv7 : inv_x1
+    PORT MAP (
+    i => somador_2_snand4,
+    nq => somador_2_sinv7,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv1 : inv_x1
+    PORT MAP (
+    i => a(2),
+    nq => somador_2_sinv1,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand17 : na2_x1
+    PORT MAP (
+    i0 => a(2),
+    i1 => somador_2_sinv11,
+    nq => somador_2_snand17,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv13 : inv_x1
+    PORT MAP (
+    i => somador_2_snand15,
+    nq => somador_2_sinv13,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand12 : na2_x1
+    PORT MAP (
+    i0 => b(2),
+    i1 => c_2,
+    nq => somador_2_snand12,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv9 : inv_x1
+    PORT MAP (
+    i => somador_3_snand10,
+    nq => somador_3_sinv9,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand19 : na2_x1
+    PORT MAP (
+    i0 => a(2),
+    i1 => somador_2_sinv13,
+    nq => somador_2_snand19,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv4 : inv_x1
+    PORT MAP (
+    i => somador_3_snand1,
+    nq => somador_3_sinv4,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv7 : inv_x1
+    PORT MAP (
+    i => somador_3_snand4,
+    nq => somador_3_sinv7,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand1 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv2,
+    i1 => c_3,
+    nq => somador_3_snand1,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv6 : inv_x1
+    PORT MAP (
+    i => somador_3_snand3,
+    nq => somador_3_sinv6,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv14 : inv_x1
+    PORT MAP (
+    i => somador_3_snand20,
+    nq => somador_3_sinv14,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand16 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv1,
+    i1 => somador_3_sinv10,
+    nq => somador_3_snand16,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand20 : na2_x1
+    PORT MAP (
+    i0 => somador_3_snand16,
+    i1 => somador_3_snand17,
+    nq => somador_3_snand20,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand3 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv2,
+    i1 => somador_3_sinv3,
+    nq => somador_3_snand3,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv12 : inv_x1
+    PORT MAP (
+    i => somador_3_snand14,
+    nq => somador_3_sinv12,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand19 : na2_x1
+    PORT MAP (
+    i0 => a(3),
+    i1 => somador_3_sinv13,
+    nq => somador_3_snand19,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand14 : na2_x1
+    PORT MAP (
+    i0 => b(3),
+    i1 => somador_3_sinv3,
+    nq => somador_3_snand14,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv2 : inv_x1
+    PORT MAP (
+    i => b(0),
+    nq => somador_0_sinv2,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv9 : inv_x1
+    PORT MAP (
+    i => somador_0_snand10,
+    nq => somador_0_sinv9,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand1 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv2,
+    i1 => c_0,
+    nq => somador_0_snand1,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand12 : na2_x1
+    PORT MAP (
+    i0 => b(0),
+    i1 => c_0,
+    nq => somador_0_snand12,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand13 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv2,
+    i1 => c_0,
+    nq => somador_0_snand13,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand16 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv1,
+    i1 => somador_0_sinv10,
+    nq => somador_0_snand16,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv10 : inv_x1
+    PORT MAP (
+    i => somador_0_snand12,
+    nq => somador_0_sinv10,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand17 : na2_x1
+    PORT MAP (
+    i0 => a(0),
+    i1 => somador_0_sinv11,
+    nq => somador_0_snand17,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand19 : na2_x1
+    PORT MAP (
+    i0 => a(0),
+    i1 => somador_0_sinv13,
+    nq => somador_0_snand19,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand20 : na2_x1
+    PORT MAP (
+    i0 => somador_0_snand16,
+    i1 => somador_0_snand17,
+    nq => somador_0_snand20,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand22 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv14,
+    i1 => somador_0_sinv15,
+    nq => c_1,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv3 : inv_x1
+    PORT MAP (
+    i => c_1,
+    nq => somador_1_sinv3,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand2 : na2_x1
+    PORT MAP (
+    i0 => b(1),
+    i1 => somador_1_sinv3,
+    nq => somador_1_snand2,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv5 : inv_x1
+    PORT MAP (
+    i => somador_1_snand2,
+    nq => somador_1_sinv5,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand6 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv1,
+    i1 => somador_1_sinv5,
+    nq => somador_1_snand6,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand19 : na2_x1
+    PORT MAP (
+    i0 => a(1),
+    i1 => somador_1_sinv13,
+    nq => somador_1_snand19,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand14 : na2_x1
+    PORT MAP (
+    i0 => b(1),
+    i1 => somador_1_sinv3,
+    nq => somador_1_snand14,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv12 : inv_x1
+    PORT MAP (
+    i => somador_1_snand14,
+    nq => somador_1_sinv12,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv7 : inv_x1
+    PORT MAP (
+    i => somador_1_snand4,
+    nq => somador_1_sinv7,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv9 : inv_x1
+    PORT MAP (
+    i => somador_1_snand10,
+    nq => somador_1_sinv9,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand10 : na2_x1
+    PORT MAP (
+    i0 => somador_2_snand7,
+    i1 => somador_2_snand8,
+    nq => somador_2_snand10,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand7 : na2_x1
+    PORT MAP (
+    i0 => a(2),
+    i1 => somador_2_sinv6,
+    nq => somador_2_snand7,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand1 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv2,
+    i1 => c_2,
+    nq => somador_2_snand1,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand3 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv2,
+    i1 => somador_2_sinv3,
+    nq => somador_2_snand3,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand13 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv2,
+    i1 => c_2,
+    nq => somador_2_snand13,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv2 : inv_x1
+    PORT MAP (
+    i => b(2),
+    nq => somador_2_sinv2,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv3 : inv_x1
+    PORT MAP (
+    i => c_2,
+    nq => somador_2_sinv3,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand21 : na2_x1
+    PORT MAP (
+    i0 => somador_2_snand18,
+    i1 => somador_2_snand19,
+    nq => somador_2_snand21,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand7 : na2_x1
+    PORT MAP (
+    i0 => a(3),
+    i1 => somador_3_sinv6,
+    nq => somador_3_snand7,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand10 : na2_x1
+    PORT MAP (
+    i0 => somador_3_snand7,
+    i1 => somador_3_snand8,
+    nq => somador_3_snand10,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv15 : inv_x1
+    PORT MAP (
+    i => somador_3_snand21,
+    nq => somador_3_sinv15,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand21 : na2_x1
+    PORT MAP (
+    i0 => somador_3_snand18,
+    i1 => somador_3_snand19,
+    nq => somador_3_snand21,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand18 : na2_x1
+    PORT MAP (
+    i0 => a(3),
+    i1 => somador_3_sinv12,
+    nq => somador_3_snand18,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv13 : inv_x1
+    PORT MAP (
+    i => somador_3_snand15,
+    nq => somador_3_sinv13,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand8 : na2_x1
+    PORT MAP (
+    i0 => a(0),
+    i1 => somador_0_sinv7,
+    nq => somador_0_snand8,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand2 : na2_x1
+    PORT MAP (
+    i0 => b(3),
+    i1 => somador_3_sinv3,
+    nq => somador_3_snand2,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand3 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv2,
+    i1 => somador_0_sinv3,
+    nq => somador_0_snand3,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv7 : inv_x1
+    PORT MAP (
+    i => somador_0_snand4,
+    nq => somador_0_sinv7,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv11 : inv_x1
+    PORT MAP (
+    i => somador_0_snand13,
+    nq => somador_0_sinv11,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv1 : inv_x1
+    PORT MAP (
+    i => a(0),
+    nq => somador_0_sinv1,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand21 : na2_x1
+    PORT MAP (
+    i0 => somador_0_snand18,
+    i1 => somador_0_snand19,
+    nq => somador_0_snand21,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand6 : na2_x1
+    PORT MAP (
+    i0 => somador_0_sinv1,
+    i1 => somador_0_sinv5,
+    nq => somador_0_snand6,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv14 : inv_x1
+    PORT MAP (
+    i => somador_1_snand20,
+    nq => somador_1_sinv14,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv10 : inv_x1
+    PORT MAP (
+    i => somador_1_snand12,
+    nq => somador_1_sinv10,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand16 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv1,
+    i1 => somador_1_sinv10,
+    nq => somador_1_snand16,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand20 : na2_x1
+    PORT MAP (
+    i0 => somador_1_snand16,
+    i1 => somador_1_snand17,
+    nq => somador_1_snand20,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand17 : na2_x1
+    PORT MAP (
+    i0 => a(1),
+    i1 => somador_1_sinv11,
+    nq => somador_1_snand17,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand9 : na2_x1
+    PORT MAP (
+    i0 => somador_1_snand5,
+    i1 => somador_1_snand6,
+    nq => somador_1_snand9,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv11 : inv_x1
+    PORT MAP (
+    i => somador_1_snand13,
+    nq => somador_1_sinv11,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand13 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv2,
+    i1 => c_1,
+    nq => somador_1_snand13,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand8 : na2_x1
+    PORT MAP (
+    i0 => a(1),
+    i1 => somador_1_sinv7,
+    nq => somador_1_snand8,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand7 : na2_x1
+    PORT MAP (
+    i0 => a(1),
+    i1 => somador_1_sinv6,
+    nq => somador_1_snand7,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv5 : inv_x1
+    PORT MAP (
+    i => somador_2_snand2,
+    nq => somador_2_sinv5,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv6 : inv_x1
+    PORT MAP (
+    i => somador_2_snand3,
+    nq => somador_2_sinv6,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand16 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv1,
+    i1 => somador_2_sinv10,
+    nq => somador_2_snand16,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand2 : na2_x1
+    PORT MAP (
+    i0 => b(2),
+    i1 => somador_2_sinv3,
+    nq => somador_2_snand2,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand20 : na2_x1
+    PORT MAP (
+    i0 => somador_2_snand16,
+    i1 => somador_2_snand17,
+    nq => somador_2_snand20,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv10 : inv_x1
+    PORT MAP (
+    i => somador_2_snand12,
+    nq => somador_2_sinv10,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv14 : inv_x1
+    PORT MAP (
+    i => somador_2_snand20,
+    nq => somador_2_sinv14,
+    vdd => vdd,
+    vss => vss);
+  somador_2_inv15 : inv_x1
+    PORT MAP (
+    i => somador_2_snand21,
+    nq => somador_2_sinv15,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand8 : na2_x1
+    PORT MAP (
+    i0 => a(3),
+    i1 => somador_3_sinv7,
+    nq => somador_3_snand8,
+    vdd => vdd,
+    vss => vss);
+  somador_2_nand22 : na2_x1
+    PORT MAP (
+    i0 => somador_2_sinv14,
+    i1 => somador_2_sinv15,
+    nq => c_3,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv11 : inv_x1
+    PORT MAP (
+    i => somador_3_snand13,
+    nq => somador_3_sinv11,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand13 : na2_x1
+    PORT MAP (
+    i0 => somador_3_sinv2,
+    i1 => c_3,
+    nq => somador_3_snand13,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv2 : inv_x1
+    PORT MAP (
+    i => b(3),
+    nq => somador_3_sinv2,
+    vdd => vdd,
+    vss => vss);
+  somador_3_nand15 : na2_x1
+    PORT MAP (
+    i0 => b(3),
+    i1 => c_3,
+    nq => somador_3_snand15,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv6 : inv_x1
+    PORT MAP (
+    i => somador_0_snand3,
+    nq => somador_0_sinv6,
+    vdd => vdd,
+    vss => vss);
+  somador_3_inv3 : inv_x1
+    PORT MAP (
+    i => c_3,
+    nq => somador_3_sinv3,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand15 : na2_x1
+    PORT MAP (
+    i0 => b(0),
+    i1 => c_0,
+    nq => somador_0_snand15,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv3 : inv_x1
+    PORT MAP (
+    i => c_0,
+    nq => somador_0_sinv3,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand2 : na2_x1
+    PORT MAP (
+    i0 => b(0),
+    i1 => somador_0_sinv3,
+    nq => somador_0_snand2,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand14 : na2_x1
+    PORT MAP (
+    i0 => b(0),
+    i1 => somador_0_sinv3,
+    nq => somador_0_snand14,
+    vdd => vdd,
+    vss => vss);
+  somador_0_nand18 : na2_x1
+    PORT MAP (
+    i0 => a(0),
+    i1 => somador_0_sinv12,
+    nq => somador_0_snand18,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv5 : inv_x1
+    PORT MAP (
+    i => somador_0_snand2,
+    nq => somador_0_sinv5,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand12 : na2_x1
+    PORT MAP (
+    i0 => b(1),
+    i1 => c_1,
+    nq => somador_1_snand12,
+    vdd => vdd,
+    vss => vss);
+  somador_0_inv12 : inv_x1
+    PORT MAP (
+    i => somador_0_snand14,
+    nq => somador_0_sinv12,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand15 : na2_x1
+    PORT MAP (
+    i0 => b(1),
+    i1 => c_1,
+    nq => somador_1_snand15,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv13 : inv_x1
+    PORT MAP (
+    i => somador_1_snand15,
+    nq => somador_1_sinv13,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv1 : inv_x1
+    PORT MAP (
+    i => a(1),
+    nq => somador_1_sinv1,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand5 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv1,
+    i1 => somador_1_sinv4,
+    nq => somador_1_snand5,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv2 : inv_x1
+    PORT MAP (
+    i => b(1),
+    nq => somador_1_sinv2,
+    vdd => vdd,
+    vss => vss);
+  somador_1_inv4 : inv_x1
+    PORT MAP (
+    i => somador_1_snand1,
+    nq => somador_1_sinv4,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand10 : na2_x1
+    PORT MAP (
+    i0 => somador_1_snand7,
+    i1 => somador_1_snand8,
+    nq => somador_1_snand10,
+    vdd => vdd,
+    vss => vss);
+  somador_1_nand11 : na2_x1
+    PORT MAP (
+    i0 => somador_1_sinv8,
+    i1 => somador_1_sinv9,
+    nq => s(1),
+    vdd => vdd,
+    vss => vss);
+  tiex0_1 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_2 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_3 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_4 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_5 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_6 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_7 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_8 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_9 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_10 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_11 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_12 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_13 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_14 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_15 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_16 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_17 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_18 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_19 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_20 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_21 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_22 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_23 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_24 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_25 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_26 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_27 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_28 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_29 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_30 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_31 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_32 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_33 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_34 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_35 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_36 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_37 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_38 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_39 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_40 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_41 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_42 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_43 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_44 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_45 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_46 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_47 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_48 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_49 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_50 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_51 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_52 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_53 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+  tiex0_54 : tie_x0
+    PORT MAP (
+    vdd => vdd,
+    vss => vss);
+
+end VST;

@@ -1,0 +1,15 @@
+
+ALLIANCE_LIBRARY = -L$(ALLIANCE_TOP)/lib \
+                     -lPgn \
+                     -lPpt \
+                     -lPhl \
+                     -lPat \
+                     -lMut \
+                     -lRcn
+
+
+ALLIANCE_INC = -I$(ALLIANCE_TOP)/include 
+
+somador_4bit_genpat_sem_atraso : somador_4bit_genpat_sem_atraso.c
+	$(CC)  -o somador_4bit_genpat_sem_atraso somador_4bit_genpat_sem_atraso.c $(ALLIANCE_INC) $(ALLIANCE_LIBRARY)
+

@@ -1,0 +1,132 @@
+N:a 0:-1:0 ps
+N:a 1:-1:0 ps
+N:a 2:-1:0 ps
+N:a 3:-1:0 ps
+N:a2_x2_2_sig:-1:492 ps
+N:a2_x2_3_sig:-1:324 ps
+N:a2_x2_4_sig:-1:528 ps
+N:a2_x2_sig:-1:492 ps
+N:a3_x2_sig:-1:945 ps
+N:aux12:-1:885 ps
+N:aux15:-1:442 ps
+N:aux4:-1:461 ps
+N:aux8:-1:746 ps
+N:b 0:-1:0 ps
+N:b 1:-1:0 ps
+N:b 2:-1:0 ps
+N:b 3:-1:0 ps
+N:c_0:-1:0 ps
+N:c_4:-1:1764 ps
+N:inv_x2_2_sig:-1:116 ps
+N:inv_x2_sig:-1:116 ps
+N:na2_x1_sig:-1:664 ps
+N:na3_x1_sig:-1:1114 ps
+N:nao22_x1_sig:-1:1310 ps
+N:nao2o22_x1_sig:-1:1167 ps
+N:no2_x1_2_sig:-1:619 ps
+N:no2_x1_sig:-1:350 ps
+N:no3_x1_2_sig:-1:777 ps
+N:no3_x1_sig:-1:724 ps
+N:noa22_x1_sig:-1:1267 ps
+N:noa2a22_x1_sig:-1:999 ps
+N:not_a_0:-1:116 ps
+N:not_a_1:-1:116 ps
+N:not_a_2:-1:116 ps
+N:not_aux0:-1:173 ps
+N:not_aux1:-1:173 ps
+N:not_aux13:-1:1058 ps
+N:not_aux15:-1:388 ps
+N:not_aux3:-1:209 ps
+N:not_aux4:-1:559 ps
+N:not_aux6:-1:492 ps
+N:not_aux8:-1:914 ps
+N:not_b_1:-1:116 ps
+N:not_b_2:-1:138 ps
+N:o2_x2_2_sig:-1:1407 ps
+N:o2_x2_3_sig:-1:358 ps
+N:o2_x2_4_sig:-1:737 ps
+N:o2_x2_sig:-1:523 ps
+N:oa22_x2_2_sig:-1:1530 ps
+N:oa22_x2_sig:-1:1005 ps
+N:oa2a22_x2_sig:-1:1286 ps
+N:on12_x1_sig:-1:1496 ps
+N:s 0:-1:756 ps
+N:s 1:-1:1656 ps
+N:s 2:-1:1666 ps
+N:s 3:-1:1842 ps
+N:xr2_x1_2_sig:-1:695 ps
+N:xr2_x1_3_sig:-1:728 ps
+N:xr2_x1_4_sig:-1:357 ps
+N:xr2_x1_sig:-1:357 ps
+B:s_3:32:1842 ps
+B:nao22_x1_ins:-1:1310 ps
+B:no2_x1_2_ins:-1:619 ps
+B:na3_x1_ins:-1:1114 ps
+B:na2_x1_ins:-1:664 ps
+B:no3_x1_2_ins:-1:777 ps
+B:a2_x2_4_ins:-1:528 ps
+B:on12_x1_ins:-1:1496 ps
+B:no3_x1_ins:-1:724 ps
+B:no2_x1_ins:-1:350 ps
+B:nao2o22_x1_ins:-1:1167 ps
+B:oa22_x2_2_ins:32:1530 ps
+B:o2_x2_4_ins:-1:737 ps
+B:s_2:-1:1666 ps
+B:noa22_x1_ins:-1:1267 ps
+B:oa22_x2_ins:-1:1005 ps
+B:xr2_x1_4_ins:-1:357 ps
+B:s_1:-1:1656 ps
+B:oa2a22_x2_ins:-1:1286 ps
+B:xr2_x1_3_ins:-1:728 ps
+B:o2_x2_3_ins:-1:358 ps
+B:xr2_x1_2_ins:-1:695 ps
+B:a2_x2_3_ins:-1:324 ps
+B:s_0:-1:756 ps
+B:xr2_x1_ins:-1:357 ps
+B:c_4_ins:-1:1904 ps
+B:a2_x2_2_ins:-1:492 ps
+B:o2_x2_2_ins:-1:1407 ps
+B:inv_x2_2_ins:-1:116 ps
+B:inv_x2_ins:-1:116 ps
+B:a3_x2_ins:-1:945 ps
+B:o2_x2_ins:-1:523 ps
+B:noa2a22_x1_ins:-1:999 ps
+B:aux4_ins:-1:386 ps
+B:aux8_ins:-1:693 ps
+B:aux12_ins:32:811 ps
+B:a2_x2_ins:-1:492 ps
+B:aux15_ins:-1:345 ps
+B:not_b_1:-1:116 ps
+B:not_b_2:-1:116 ps
+B:not_a_0:-1:116 ps
+B:not_a_1:-1:116 ps
+B:not_a_2:-1:116 ps
+B:not_aux1_ins:-1:173 ps
+B:not_aux3_ins:32:209 ps
+B:not_aux4_ins:32:559 ps
+B:not_aux6_ins:-1:492 ps
+B:not_aux8_ins:-1:914 ps
+B:not_aux13_ins:32:1058 ps
+B:not_aux0_ins:-1:173 ps
+B:not_aux15_ins:-1:357 ps
+C:c_4:-1:1764 ps
+C:s 0:-1:756 ps
+C:s 1:-1:1656 ps
+C:s 2:-1:1666 ps
+C:s 3:32:1842 ps
+C:c_0:-1:0 ps
+C:b 0:32:0 ps
+C:b 1:-1:0 ps
+C:b 2:-1:0 ps
+C:b 3:-1:0 ps
+C:a 0:-1:0 ps
+C:a 1:-1:0 ps
+C:a 2:-1:0 ps
+C:a 3:-1:0 ps
+P:b_0:b_0:not_aux3_ins:32:357 ps
+P:not_aux3_ins:not_aux3:not_aux4_ins:32:357 ps
+P:not_aux4_ins:not_aux4:aux12_ins:32:357 ps
+P:aux12_ins:aux12:not_aux13_ins:32:357 ps
+P:not_aux13_ins:not_aux13:oa22_x2_2_ins:32:357 ps
+P:oa22_x2_2_ins:oa22_x2_2_sig:s_3:32:357 ps
+P:s_3:s 3:s_3:32:357 ps

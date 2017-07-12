@@ -1,0 +1,24 @@
+*
+* Curvas estáticas do inversor_1
+
+* Circuit description
+
+.include inversor_6.spi
+
+V1 20 30 1.8V
+v2 10 30 0V DC
+
+*   a vdd vss y  
+X1 10 20 30 40 inversor_6
+X2 40 20 30 41 inversor_6
+X3 41 20 30 42 inversor_6
+
+V3 30 0 DC 0
+
+.model tp pmos level = 54
+.model tn nmos level = 54
+
+* Analysis
+
+.dc v2 0.7 1.1 0.001
+.end

@@ -1,0 +1,73 @@
+-- VHDL data flow description generated from `somador_4bit_vasy_boom_3`
+--		date : Thu Feb 27 09:17:59 2014
+
+
+-- Entity Declaration
+
+ENTITY somador_4bit_vasy_boom_3 IS
+  PORT (
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  b : in bit_vector(3 DOWNTO 0) ;	-- b
+  c_0 : in BIT;	-- c_0
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  c_4 : out BIT;	-- c_4
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END somador_4bit_vasy_boom_3;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF somador_4bit_vasy_boom_3 IS
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux5 : BIT;		-- aux5
+  SIGNAL aux6 : BIT;		-- aux6
+  SIGNAL aux7 : BIT;		-- aux7
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux10 : BIT;		-- aux10
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux12 : BIT;		-- aux12
+  SIGNAL aux13 : BIT;		-- aux13
+  SIGNAL aux14 : BIT;		-- aux14
+  SIGNAL aux17 : BIT;		-- aux17
+  SIGNAL aux18 : BIT;		-- aux18
+  SIGNAL aux19 : BIT;		-- aux19
+
+BEGIN
+  aux19 <= (b(1) XOR a(1));
+  aux18 <= (aux5 XOR aux14);
+  aux17 <= (((aux7 AND aux4) OR aux1) XOR aux14);
+  aux14 <= (a(3) XOR b(3));
+  aux13 <= (aux2 XOR aux11);
+  aux12 <= (aux7 XOR aux11);
+  aux11 <= (b(2) XOR a(2));
+  aux10 <= (a(0) AND c_0);
+  aux9 <= ((aux7 OR aux1) OR aux0);
+  aux7 <= (b(1) AND a(1));
+  aux6 <= (a(0) OR c_0);
+  aux5 <= (aux4 AND (aux2 OR aux1));
+  aux4 <= (a(2) OR b(2));
+  aux2 <= (b(1) OR a(1));
+  aux1 <= (a(2) AND b(2));
+  aux0 <= (b(3) AND a(3));
+
+c_4 <= ((aux9 OR aux10 OR b(0)) AND (aux9 OR aux6) AND (
+(aux5 AND (b(3) OR a(3))) OR aux0));
+
+s (0) <= (a(0) XOR c_0 XOR b(0));
+
+s (1) <= (((aux19 XOR aux6) AND b(0)) OR ((aux19 XOR aux10
+) AND NOT(b(0))));
+
+s (2) <= ((((aux13 AND aux6) OR (aux12 AND NOT(aux6))) AND
+ b(0)) OR (((aux13 AND aux10) OR (aux12 AND NOT(
+aux10))) AND NOT(b(0))));
+
+s (3) <= ((((aux18 AND aux6) OR (aux17 AND NOT(aux6))) AND
+ b(0)) OR (((aux18 AND aux10) OR (aux17 AND NOT(
+aux10))) AND NOT(b(0))));
+END;

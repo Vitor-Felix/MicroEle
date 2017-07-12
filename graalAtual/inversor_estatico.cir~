@@ -1,0 +1,38 @@
+*
+* Curvas do diodo entre dreno e source com graal
+*
+
+* Circuit description
+
+*.include inverso_cmos_1.spi
+*.include inverso_cmos_2.spi
+*.include inverso_cmos_3.spi
+.inclde inversor_6_paralelo_real_flat
+.include inversor_6_gordo.spi
+.include inversor_6.spi
+
+*V2 10 30 0V
+*               
+V2 10 30 pulse (0V 1.8V 1ns 1ps 1ps 1ns 2ns)
+
+
+*   a vdd vss y
+X1 10 20 30  40 inversor_6
+X2 10 20 30  41 inversor_6_gordo
+X3 10 20 30  42 inversor_6_paralelo_real_flat
+
+
+
+v1 20 30 1.8V
+v3 30 0 0V
+
+* Auxiliar voltage source
+* VAUX 10 20 DC 0
+
+.model tp pmos level = 54
+.model tn nmos level = 54
+* Analysis
+
+*.dc v2 0 1.8 0.001
+.tran 0.00001 3ns
+.end

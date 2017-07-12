@@ -1,0 +1,75 @@
+-- VHDL data flow description generated from `somador_4bit_vasy_boom_0_3`
+--		date : Thu Feb 27 09:18:43 2014
+
+
+-- Entity Declaration
+
+ENTITY somador_4bit_vasy_boom_0_3 IS
+  PORT (
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  b : in bit_vector(3 DOWNTO 0) ;	-- b
+  c_0 : in BIT;	-- c_0
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  c_4 : out BIT;	-- c_4
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END somador_4bit_vasy_boom_0_3;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF somador_4bit_vasy_boom_0_3 IS
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux3 : BIT;		-- aux3
+  SIGNAL aux4 : BIT;		-- aux4
+  SIGNAL aux5 : BIT;		-- aux5
+  SIGNAL aux9 : BIT;		-- aux9
+  SIGNAL aux10 : BIT;		-- aux10
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux12 : BIT;		-- aux12
+  SIGNAL aux16 : BIT;		-- aux16
+  SIGNAL aux17 : BIT;		-- aux17
+  SIGNAL aux18 : BIT;		-- aux18
+  SIGNAL aux19 : BIT;		-- aux19
+  SIGNAL aux21 : BIT;		-- aux21
+  SIGNAL aux22 : BIT;		-- aux22
+
+BEGIN
+  aux22 <= (b(1) XOR a(1));
+  aux21 <= NOT(aux12 OR (NOT(aux11) OR b(0)));
+  aux19 <= (aux4 AND aux17);
+  aux18 <= (NOT(aux1) AND NOT(aux17));
+  aux17 <= NOT(a(3) XOR b(3));
+  aux16 <= ((b(1) AND (aux12 OR a(1))) OR (aux12 AND a(1)));
+  aux12 <= (a(0) AND c_0);
+  aux11 <= (b(2) XOR a(2));
+  aux10 <= NOT(aux9 AND b(2));
+  aux9 <= ((b(1) AND (aux3 OR a(1))) OR (aux3 AND a(1)));
+  aux5 <= NOT(aux4 AND aux3);
+  aux4 <= (b(1) OR a(1));
+  aux3 <= (a(0) OR c_0);
+  aux2 <= (aux1 OR aux0);
+  aux1 <= (b(1) AND a(1));
+  aux0 <= (a(3) AND b(3));
+
+c_4 <= ((aux2 OR NOT(aux21)) AND (NOT(aux10) OR aux0 OR 
+a(2)) AND (NOT(aux5) OR aux2 OR b(2)) AND (a(3) OR 
+b(3)));
+
+s (0) <= (a(0) XOR c_0 XOR b(0));
+
+s (1) <= (((aux22 XOR aux3) AND b(0)) OR ((aux22 XOR aux12
+) AND NOT(b(0))));
+
+s (2) <= (((aux9 XOR aux11) AND b(0)) OR ((aux16 XOR aux11
+) AND NOT(b(0))));
+
+s (3) <= (((aux1 OR aux12) AND aux19 AND b(2)) OR (aux5 
+AND aux18 AND NOT(b(2))) OR ((aux16 OR b(2)) AND 
+aux17 AND a(2)) OR (aux10 AND NOT(aux17) AND NOT(a(2))
+) OR (aux19 AND aux3 AND aux11 AND b(0)) OR (aux18
+ AND aux21));
+END;

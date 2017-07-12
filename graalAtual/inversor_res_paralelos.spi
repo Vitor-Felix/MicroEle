@@ -1,0 +1,22 @@
+* Spice description of inversor_res_paralelos
+* Spice driver version 270587057
+* Date ( dd/mm/yyyy hh:mm:ss ):  6/11/2014 at 14:07:44
+
+* INTERF aa vdd vss yy 
+
+
+.subckt inversor_res_paralelos 1 2 3 4 
+* NET 1 = aa
+* NET 2 = vdd
+* NET 3 = vss
+* NET 4 = yy
+Mtr_00004 4 1 2 2 tp L=1U W=7U AS=14P AD=14P PS=18U PD=18U 
+Mtr_00003 4 1 2 2 tp L=1U W=7U AS=14P AD=14P PS=18U PD=18U 
+Mtr_00002 4 1 3 3 tn L=1U W=3U AS=6P AD=6P PS=10U PD=10U 
+Mtr_00001 4 1 3 3 tn L=1U W=3U AS=6P AD=6P PS=10U PD=10U 
+C4 1 3 4.072e-14
+C3 2 3 2.016e-14
+C2 3 3 2.016e-14
+C1 4 3 2.624e-14
+.ends inversor_res_paralelos
+

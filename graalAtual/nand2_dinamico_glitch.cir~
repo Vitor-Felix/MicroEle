@@ -1,0 +1,39 @@
+*
+* Curvas do diodo entre dreno e source com graal
+*
+
+* Circuit description
+
+.include nand_2_2014_2_real_flat_2.spi
+
+.include nand_2_2014_2_real_flat_3.spi
+
+*V2 10 30 0V
+*   a  b vdd vss y 
+*X1 10 20 40 50 30 nand_2_2014_2_real_flat_2
+X2 10 20 40 50 31 nand_2_2014_2_real_flat_3
+
+v3 40 50 1.8V
+
+v4 50 0 0V
+
+* Auxiliar voltage source
+* VAUX 10 20 DC 0
+
+.model tp pmos level = 54
+.model tn nmos level = 54
+* Analysis
+
+*V1 10 50 
+
+*V2 20 50 0VDC
+
+*.dc v2 0 1.8 0.001
+
+v1 10 50 pulse(0 1.8 0ns 1ps 1ps .8ns .16ns)
+
+v2 20 50 pulse(0 1.8 .2ns 1ps 1ps .16ns .32ns)
+
+
+.tran 0.0001ns 1ns
+.end

@@ -1,0 +1,77 @@
+entity somador_4bit_genlib is
+   port (
+      a   : in      bit_vector(3 downto 0);
+      b   : in      bit_vector(3 downto 0);
+      s   : out     bit_vector(3 downto 0);
+      c_0 : in      bit;
+      c_4 : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end somador_4bit_genlib;
+
+architecture structural of somador_4bit_genlib is
+Component somador_1bit_genlib
+   port (
+      a   : in      bit;
+      b   : in      bit;
+      c   : in      bit;
+      s   : out     bit;
+      r   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+signal c_3 : bit;
+signal c_2 : bit;
+signal c_1 : bit;
+
+begin
+
+somador_0 : somador_1bit_genlib
+   port map (
+      a   => a(0),
+      b   => b(0),
+      c   => c_0,
+      s   => s(0),
+      r   => c_1,
+      vdd => vdd,
+      vss => vss
+   );
+
+somador_1 : somador_1bit_genlib
+   port map (
+      a   => a(1),
+      b   => b(1),
+      c   => c_1,
+      s   => s(1),
+      r   => c_2,
+      vdd => vdd,
+      vss => vss
+   );
+
+somador_2 : somador_1bit_genlib
+   port map (
+      a   => a(2),
+      b   => b(2),
+      c   => c_2,
+      s   => s(2),
+      r   => c_3,
+      vdd => vdd,
+      vss => vss
+   );
+
+somador_3 : somador_1bit_genlib
+   port map (
+      a   => a(3),
+      b   => b(3),
+      c   => c_3,
+      s   => s(3),
+      r   => c_4,
+      vdd => vdd,
+      vss => vss
+   );
+
+
+end structural;

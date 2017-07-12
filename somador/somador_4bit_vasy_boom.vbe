@@ -1,0 +1,62 @@
+-- VHDL data flow description generated from `somador_4bit_vasy_boom`
+--		date : Mon Aug  4 15:17:51 2014
+
+
+-- Entity Declaration
+
+ENTITY somador_4bit_vasy_boom IS
+  PORT (
+  a : in bit_vector(3 DOWNTO 0) ;	-- a
+  b : in bit_vector(3 DOWNTO 0) ;	-- b
+  c_0 : in BIT;	-- c_0
+  s : out bit_vector(3 DOWNTO 0) ;	-- s
+  c_4 : out BIT;	-- c_4
+  vdd : in BIT;	-- vdd
+  vss : in BIT	-- vss
+  );
+END somador_4bit_vasy_boom;
+
+
+-- Architecture Declaration
+
+ARCHITECTURE behaviour_data_flow OF somador_4bit_vasy_boom IS
+  SIGNAL aux0 : BIT;		-- aux0
+  SIGNAL aux1 : BIT;		-- aux1
+  SIGNAL aux2 : BIT;		-- aux2
+  SIGNAL aux3 : BIT;		-- aux3
+  SIGNAL aux10 : BIT;		-- aux10
+  SIGNAL aux11 : BIT;		-- aux11
+  SIGNAL aux13 : BIT;		-- aux13
+  SIGNAL aux21 : BIT;		-- aux21
+  SIGNAL aux22 : BIT;		-- aux22
+
+BEGIN
+  aux22 <= (b(1) XOR a(1));
+  aux21 <= ((((aux13 AND aux3) OR (aux11 AND NOT(aux3))) AND
+ a(0)) OR (((aux13 AND aux1) OR (aux11 AND NOT(
+aux1))) AND NOT(a(0))));
+  aux13 <= (b(3) XOR aux2);
+  aux11 <= (b(3) XOR aux0);
+  aux10 <= (((aux0 OR aux1) OR a(0)) AND ((b(1) AND (aux3 OR
+ a(1))) OR (aux3 AND a(1))));
+  aux3 <= (c_0 OR b(0));
+  aux2 <= (b(1) OR a(1));
+  aux1 <= (c_0 AND b(0));
+  aux0 <= (b(1) AND a(1));
+
+c_4 <= (((b(3) AND a(3)) OR (aux10 AND a(2)) OR b(2)) 
+AND (((aux10 OR a(2)) AND b(3)) OR a(3)) AND ((aux2 
+AND aux3 AND a(0)) OR (aux2 AND aux1) OR b(3) OR 
+aux0 OR a(2)));
+
+s (0) <= (c_0 XOR b(0) XOR a(0));
+
+s (1) <= (((aux22 XOR aux3) AND a(0)) OR ((aux22 XOR aux1)
+ AND NOT(a(0))));
+
+s (2) <= (aux10 XOR a(2) XOR b(2));
+
+s (3) <= (((((NOT(b(3)) AND a(2)) OR (aux21 AND NOT(a(2)))
+) XOR a(3)) AND b(2)) OR ((((aux21 AND a(2)) OR (
+b(3) AND NOT(a(2)))) XOR a(3)) AND NOT(b(2))));
+END;

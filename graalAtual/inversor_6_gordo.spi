@@ -1,0 +1,20 @@
+* Spice description of inversor_6_gordo
+* Spice driver version 270587057
+* Date ( dd/mm/yyyy hh:mm:ss ): 30/10/2014 at 15:54:55
+
+* INTERF a vdd vss y 
+
+
+.subckt inversor_6_gordo 1 2 4 3 
+* NET 1 = a
+* NET 2 = vdd
+* NET 3 = y
+* NET 4 = vss
+Mtr_00002 3 1 2 2 tp L=1U W=13U AS=26P AD=26P PS=30U PD=30U 
+Mtr_00001 3 1 4 4 tn L=1U W=7U AS=14P AD=14P PS=18U PD=18U 
+C4 1 4 1.727e-14
+C3 2 4 9.03e-15
+C2 3 4 1.003e-14
+C1 4 4 9.03e-15
+.ends inversor_6_gordo
+

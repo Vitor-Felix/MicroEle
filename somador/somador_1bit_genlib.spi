@@ -1,0 +1,91 @@
+* Spice description of somador_1bit_genlib
+* Spice driver version 270587057
+* Date ( dd/mm/yyyy hh:mm:ss ):  2/07/2014 at 15:50:31
+
+* INTERF vss vdd r s c b a 
+
+.INCLUDE na2_x1.spi
+.INCLUDE inv_x1.spi
+
+.subckt somador_1bit_genlib 42 41 4 5 3 2 1 
+* NET 1 = a
+* NET 2 = b
+* NET 3 = c
+* NET 4 = r
+* NET 5 = s
+* NET 6 = sinv1
+* NET 7 = sinv10
+* NET 8 = sinv11
+* NET 9 = sinv12
+* NET 10 = sinv13
+* NET 11 = sinv14
+* NET 12 = sinv15
+* NET 13 = sinv2
+* NET 14 = sinv3
+* NET 15 = sinv4
+* NET 16 = sinv5
+* NET 17 = sinv6
+* NET 18 = sinv7
+* NET 19 = sinv8
+* NET 20 = sinv9
+* NET 21 = snand1
+* NET 22 = snand10
+* NET 23 = snand12
+* NET 24 = snand13
+* NET 25 = snand14
+* NET 26 = snand15
+* NET 27 = snand16
+* NET 28 = snand17
+* NET 29 = snand18
+* NET 30 = snand19
+* NET 31 = snand2
+* NET 32 = snand20
+* NET 33 = snand21
+* NET 34 = snand3
+* NET 35 = snand4
+* NET 36 = snand5
+* NET 37 = snand6
+* NET 38 = snand7
+* NET 39 = snand8
+* NET 40 = snand9
+* NET 41 = vdd
+* NET 42 = vss
+xnand22 42 41 4 12 11 na2_x1
+xnand21 42 41 33 30 29 na2_x1
+xnand20 42 41 32 28 27 na2_x1
+xnand19 42 41 30 10 1 na2_x1
+xnand18 42 41 29 9 1 na2_x1
+xnand17 42 41 28 8 1 na2_x1
+xnand16 42 41 27 7 6 na2_x1
+xnand15 42 41 26 3 2 na2_x1
+xnand14 42 41 25 14 2 na2_x1
+xnand13 42 41 24 3 13 na2_x1
+xnand12 42 41 23 3 2 na2_x1
+xnand11 42 41 5 20 19 na2_x1
+xnand10 42 41 22 39 38 na2_x1
+xnand9 42 41 40 37 36 na2_x1
+xnand8 42 41 39 18 1 na2_x1
+xnand7 42 41 38 17 1 na2_x1
+xnand6 42 41 37 16 6 na2_x1
+xnand5 42 41 36 15 6 na2_x1
+xnand4 42 41 35 3 2 na2_x1
+xnand3 42 41 34 14 13 na2_x1
+xnand2 42 41 31 14 2 na2_x1
+xnand1 42 41 21 3 13 na2_x1
+xinv15 42 41 12 33 inv_x1
+xinv14 42 41 11 32 inv_x1
+xinv13 42 41 10 26 inv_x1
+xinv12 42 41 9 25 inv_x1
+xinv11 42 41 8 24 inv_x1
+xinv10 42 41 7 23 inv_x1
+xinv9 42 41 20 22 inv_x1
+xinv8 42 41 19 40 inv_x1
+xinv7 42 41 18 35 inv_x1
+xinv6 42 41 17 34 inv_x1
+xinv5 42 41 16 31 inv_x1
+xinv4 42 41 15 21 inv_x1
+xinv3 42 41 14 3 inv_x1
+xinv2 42 41 13 2 inv_x1
+xinv1 42 41 6 1 inv_x1
+.ends somador_1bit_genlib
+

@@ -1,0 +1,29 @@
+TOP (# IOs are ordered from left to right
+	(IOPIN b(3).0);
+	(IOPIN b(2).0);
+	(IOPIN b(1).0);
+	(IOPIN b(0).0);
+	(IOPIN a(3).0);
+	(IOPIN a(2).0);
+	(IOPIN a(1).0);
+	(IOPIN a(0).0);
+	(IOPIN c_0.0);
+)
+#LEFT (# IOs are ordered 
+
+#	(IOPIN vdd.0);
+	#(IOPIN vss.0);
+#)	
+BOTTOM (# IOs are ordered from left to right
+	(IOPIN s(3).0);
+	(IOPIN s(2).0);
+	(IOPIN s(1).0);
+	(IOPIN s(0).0);
+	(IOPIN c_4.0);
+       #(IOPIN ck.0);
+)
+#RIGHT (# IOs are ordered 
+
+	#(IOPIN vdd.0);
+#	(IOPIN vss.0);
+#)

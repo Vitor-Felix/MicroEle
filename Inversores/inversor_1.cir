@@ -1,0 +1,26 @@
+*
+* Curvas do diodo entre dreno e source com graal
+*
+
+* Circuit description
+
+.include inversor_1.spi
+
+V1 20 30 1.8V
+v2 10 30 0V DC
+
+
+
+* INTERF vdd vss x y 
+*inversor_1 2 3 1 4 
+*
+*  vdd vss x y  
+X1 20 30 10 40 inversor_1
+
+V3 30 0 DC 0
+.model tp pmos level = 54
+.model tn nmos level = 54
+
+* Analysis
+.dc v2 0 1.8 0.001
+.end

@@ -1,0 +1,310 @@
+-- VHDL structural description generated from `somador_4bit_chip_teste`
+--		date : Wed Mar 20 13:17:01 2013
+
+
+-- Entity Declaration
+
+ENTITY somador_4bit_chip_teste IS
+  PORT (
+  vsse : linkage BIT ;	-- vsse
+  vss : linkage BIT ;	-- vss
+  vdde : linkage BIT ;	-- vdde
+  vdd : linkage BIT ;	-- vdd
+  s : linkage BIT_VECTOR(3 DOWNTO 0) ;	-- s
+  ck : linkage BIT ;	-- ck
+  c_4 : linkage BIT ;	-- c_4
+  c_0 : linkage BIT ;	-- c_0
+  b : linkage BIT_VECTOR(3 DOWNTO 0) ;	-- b
+  a : linkage BIT_VECTOR(3 DOWNTO 0) 	-- a
+  );
+END somador_4bit_chip_teste;
+
+-- Architecture Declaration
+
+ARCHITECTURE VST OF somador_4bit_chip_teste IS
+  COMPONENT pvsseck_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    cko : linkage BIT ;	-- cko
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT pvssick_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    cko : linkage BIT ;	-- cko
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT pvddick_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    cko : linkage BIT ;	-- cko
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT pvddeck_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    cko : linkage BIT ;	-- cko
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT po_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    pad : linkage BIT ;	-- pad
+    i : linkage BIT ;	-- i
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT pck_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    pad : linkage BIT ;	-- pad
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT pi_sp
+    port (
+    vssi : linkage BIT ;	-- vssi
+    vsse : linkage BIT ;	-- vsse
+    vddi : linkage BIT ;	-- vddi
+    vdde : linkage BIT ;	-- vdde
+    t : linkage BIT ;	-- t
+    pad : linkage BIT ;	-- pad
+    ck : linkage BIT 	-- ck
+    );
+  END COMPONENT;
+
+  COMPONENT somador_4bit_core_routed
+    port (
+    vss : linkage BIT ;	-- vss
+    vdd : linkage BIT ;	-- vdd
+    s : linkage BIT_VECTOR(3 DOWNTO 0) ;	-- s
+    c_4 : linkage BIT ;	-- c_4
+    c_0 : linkage BIT ;	-- c_0
+    b : linkage BIT_VECTOR(3 DOWNTO 0) ;	-- b
+    a : linkage BIT_VECTOR(3 DOWNTO 0) 	-- a
+    );
+  END COMPONENT;
+
+  SIGNAL ai_1 : BIT;	-- ai 1
+  SIGNAL bi_1 : BIT;	-- bi 1
+  SIGNAL bi_3 : BIT;	-- bi 3
+  SIGNAL ai_3 : BIT;	-- ai 3
+  SIGNAL c_0i : BIT;	-- c_0i
+  SIGNAL ai_2 : BIT;	-- ai 2
+  SIGNAL bi_2 : BIT;	-- bi 2
+  SIGNAL ai_0 : BIT;	-- ai 0
+  SIGNAL bi_0 : BIT;	-- bi 0
+  SIGNAL c_4i : BIT;	-- c_4i
+  SIGNAL si_0 : BIT;	-- si 0
+  SIGNAL si_1 : BIT;	-- si 1
+  SIGNAL si_2 : BIT;	-- si 2
+  SIGNAL si_3 : BIT;	-- si 3
+  SIGNAL coin_v_679_v_270_v_679_v_260 : BIT;	-- coin_-679_-270_-679_-260
+
+BEGIN
+
+  p_vsse : pvsseck_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    cko => vss,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_vssi : pvssick_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    cko => vss,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_vddi : pvddick_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    cko => vss,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_vdde : pvddeck_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    cko => vss,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_s3 : po_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    i => si_3,
+    pad => s(3),
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_s2 : po_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    i => si_2,
+    pad => s(2),
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_s1 : po_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    i => si_1,
+    pad => s(1),
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_s0 : po_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    i => si_0,
+    pad => s(0),
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_c_4 : po_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    i => c_4i,
+    pad => c_4,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_ck : pck_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => ck,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_b3 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => b(3),
+    t => bi_3,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_b2 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => b(2),
+    t => bi_2,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_b1 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => b(1),
+    t => bi_1,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_b0 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => b(0),
+    t => bi_0,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_a3 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => a(3),
+    t => ai_3,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_a2 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => a(2),
+    t => ai_2,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_a1 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => a(1),
+    t => ai_1,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_a0 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => a(0),
+    t => ai_0,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  p_c_0 : pi_sp
+    PORT MAP (
+    ck => coin_v_679_v_270_v_679_v_260,
+    pad => c_0,
+    t => c_0i,
+    vdde => vdde,
+    vddi => vdd,
+    vsse => vsse,
+    vssi => vss);
+  core : somador_4bit_core_routed
+    PORT MAP (
+    a => ai_3& ai_2& ai_1& ai_0,
+    b => bi_3& bi_2& bi_1& bi_0,
+    c_0 => c_0i,
+    c_4 => c_4i,
+    s => si_3& si_2& si_1& si_0,
+    vdd => vdd,
+    vss => vss);
+
+end VST;

@@ -1,0 +1,856 @@
+entity somador_1bit is
+   port (
+      a   : in      bit;
+      b   : in      bit;
+      c   : in      bit;
+      s   : out     bit;
+      r   : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end somador_1bit;
+
+architecture structural of somador_1bit is
+Component inv_x1
+   generic (
+      CONSTANT area        : natural := 750;
+      CONSTANT cin_i       : natural := 8;
+      CONSTANT rdown_i_nq  : natural := 3640;
+      CONSTANT rup_i_nq    : natural := 3720;
+      CONSTANT tphl_i_nq   : natural := 101;
+      CONSTANT tplh_i_nq   : natural := 139;
+      CONSTANT transistors : natural := 2
+   );
+   port (
+      i   : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+Component na2_x1
+   generic (
+      CONSTANT area        : natural := 1000;
+      CONSTANT cin_i0      : natural := 11;
+      CONSTANT cin_i1      : natural := 11;
+      CONSTANT rdown_i0_nq : natural := 2850;
+      CONSTANT rdown_i1_nq : natural := 2850;
+      CONSTANT rup_i0_nq   : natural := 3720;
+      CONSTANT rup_i1_nq   : natural := 3720;
+      CONSTANT tphl_i0_nq  : natural := 59;
+      CONSTANT tphl_i1_nq  : natural := 111;
+      CONSTANT tplh_i1_nq  : natural := 234;
+      CONSTANT tplh_i0_nq  : natural := 288;
+      CONSTANT transistors : natural := 4
+   );
+   port (
+      i0  : in      bit;
+      i1  : in      bit;
+      nq  : out     bit;
+      vdd : in      bit;
+      vss : in      bit
+ );
+end component;
+
+signal snand9  : bit;
+signal snand8  : bit;
+signal snand7  : bit;
+signal snand6  : bit;
+signal snand5  : bit;
+signal snand4  : bit;
+signal snand3  : bit;
+signal snand21 : bit;
+signal snand20 : bit;
+signal snand2  : bit;
+signal snand19 : bit;
+signal snand18 : bit;
+signal snand17 : bit;
+signal snand16 : bit;
+signal snand15 : bit;
+signal snand14 : bit;
+signal snand13 : bit;
+signal snand12 : bit;
+signal snand10 : bit;
+signal snand1  : bit;
+signal sinv9   : bit;
+signal sinv8   : bit;
+signal sinv7   : bit;
+signal sinv6   : bit;
+signal sinv5   : bit;
+signal sinv4   : bit;
+signal sinv3   : bit;
+signal sinv2   : bit;
+signal sinv15  : bit;
+signal sinv14  : bit;
+signal sinv13  : bit;
+signal sinv12  : bit;
+signal sinv11  : bit;
+signal sinv10  : bit;
+signal sinv1   : bit;
+
+begin
+
+inv1 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => a,
+      nq  => sinv1,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv2 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => b,
+      nq  => sinv2,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv3 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => c,
+      nq  => sinv3,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv4 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand1,
+      nq  => sinv4,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv5 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand2,
+      nq  => sinv5,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv6 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand3,
+      nq  => sinv6,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv7 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand4,
+      nq  => sinv7,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv8 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand9,
+      nq  => sinv8,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv9 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand10,
+      nq  => sinv9,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv10 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand12,
+      nq  => sinv10,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv11 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand13,
+      nq  => sinv11,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv12 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand14,
+      nq  => sinv12,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv13 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand15,
+      nq  => sinv13,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv14 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand20,
+      nq  => sinv14,
+      vdd => vdd,
+      vss => vss
+   );
+
+inv15 : inv_x1
+   Generic Map (
+      area        => 750,
+      cin_i       => 8,
+      rdown_i_nq  => 3640,
+      rup_i_nq    => 3720,
+      tphl_i_nq   => 101,
+      tplh_i_nq   => 139,
+      transistors => 2
+   )
+   port map (
+      i   => snand21,
+      nq  => sinv15,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand1 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv2,
+      i1  => c,
+      nq  => snand1,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand2 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => b,
+      i1  => sinv3,
+      nq  => snand2,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand3 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv2,
+      i1  => sinv3,
+      nq  => snand3,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand4 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => b,
+      i1  => c,
+      nq  => snand4,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand5 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv1,
+      i1  => sinv4,
+      nq  => snand5,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand6 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv1,
+      i1  => sinv5,
+      nq  => snand6,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand7 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => a,
+      i1  => sinv6,
+      nq  => snand7,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand8 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => a,
+      i1  => sinv7,
+      nq  => snand8,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand9 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => snand5,
+      i1  => snand6,
+      nq  => snand9,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand10 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => snand7,
+      i1  => snand8,
+      nq  => snand10,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand11 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv8,
+      i1  => sinv9,
+      nq  => s,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand12 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => b,
+      i1  => c,
+      nq  => snand12,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand13 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv2,
+      i1  => c,
+      nq  => snand13,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand14 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => b,
+      i1  => sinv3,
+      nq  => snand14,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand15 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => b,
+      i1  => c,
+      nq  => snand15,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand16 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv1,
+      i1  => sinv10,
+      nq  => snand16,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand17 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => a,
+      i1  => sinv11,
+      nq  => snand17,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand18 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => a,
+      i1  => sinv12,
+      nq  => snand18,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand19 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => a,
+      i1  => sinv13,
+      nq  => snand19,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand20 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => snand16,
+      i1  => snand17,
+      nq  => snand20,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand21 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => snand18,
+      i1  => snand19,
+      nq  => snand21,
+      vdd => vdd,
+      vss => vss
+   );
+
+nand22 : na2_x1
+   Generic Map (
+      area        => 1000,
+      cin_i0      => 11,
+      cin_i1      => 11,
+      rdown_i0_nq => 2850,
+      rdown_i1_nq => 2850,
+      rup_i0_nq   => 3720,
+      rup_i1_nq   => 3720,
+      tphl_i0_nq  => 59,
+      tphl_i1_nq  => 111,
+      tplh_i1_nq  => 234,
+      tplh_i0_nq  => 288,
+      transistors => 4
+   )
+   port map (
+      i0  => sinv14,
+      i1  => sinv15,
+      nq  => r,
+      vdd => vdd,
+      vss => vss
+   );
+
+
+end structural;

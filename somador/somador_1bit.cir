@@ -1,0 +1,20 @@
+
+ 
+.include somador_1bit_genlib_ocp_1_rows_roteado.spi
+.model tp pmos level=54
+.model tn nmos level=54
+
+*   a  b  c   r  s vdd vss  
+
+x1 10 20 30 40 50 60 70  somador_1bit_genlib_ocp_1_rows_roteado
+
+
+v1 10 70 pulse(0 1.8V 4ns 1ps 1ps 4ns 8ns)
+v2 20 70 pulse(0 1.8V 8ns 1ps 1ps 8ns 16ns)
+v3 30 70 pulse(0 1.8V 16ns 1ps 1ps 16ns 32ns)
+v4 60 70 1.8V
+v5 70 0 0V
+*.dc v1 0 1.8 0.01
+.tran 0.0001 32ns
+.end
+

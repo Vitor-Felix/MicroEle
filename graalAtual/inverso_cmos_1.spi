@@ -1,0 +1,20 @@
+* Spice description of inverso_cmos_1
+* Spice driver version 270587057
+* Date ( dd/mm/yyyy hh:mm:ss ): 21/10/2015 at 17:03:18
+
+* INTERF a vdd vss y 
+
+
+.subckt inverso_cmos_1 1 2 3 4 
+* NET 1 = a
+* NET 2 = vdd
+* NET 3 = vss
+* NET 4 = y
+Mtr_00002 4 1 2 2 tp L=1U W=1U AS=2P AD=2P PS=6U PD=6U 
+Mtr_00001 3 1 4 3 tn L=1U W=2U AS=4P AD=4P PS=8U PD=8U 
+C4 1 3 1.667e-14
+C3 2 3 9.03e-15
+C2 3 3 9.03e-15
+C1 4 3 1.003e-14
+.ends inverso_cmos_1
+

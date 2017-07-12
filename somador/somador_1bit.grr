@@ -1,0 +1,2 @@
+rm -f somador_1bit somador_1bit.o somador_1bit.exe
+make: ***  Sem regra para processar o alvo `somador_1bit.c', necessário por `somador_1bit.o'.  Pare.

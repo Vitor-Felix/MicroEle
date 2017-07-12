@@ -1,0 +1,27 @@
+
+ 
+.include somador_4bit_genlib_4_rows_roteado.spi
+.model tp pmos level=54
+.model tn nmos level=54
+
+* a[0] a[1] a[2] a[3] b[0] b[1] b[2] b[3] c_0 c_4 s[0] s[1] s[2] s[3] vdd vss 
+
+
+x1 10 11 12 13 20 21 22 23 30 40 50 51 52 53 60 70  somador_4bit_genlib_4_rows_roteado
+
+
+v1 10 70 pulse(0 1.8V 4ns 1ps 1ps 4ns 8ns)
+v2 11 70 pulse(0 1.8V 8ns 1ps 1ps 8ns 16ns)
+v3 12 70 pulse(0 1.8V 16ns 1ps 1ps 16ns 32ns)
+v4 13 70 pulse(0 1.8V 32ns 1ps 1ps 32ns 64ns)
+v5 20 70 pulse(0 1.8V 64ns 1ps 1ps 64ns 128ns)
+v6 21 70 pulse(0 1.8V 128ns 1ps 1ps 128ns 256ns)
+v7 22 70 pulse(0 1.8V 256ns 1ps 1ps 256ns 512ns)
+v8 23 70 pulse(0 1.8V 512ns 1ps 1ps 512ns 1024ns)
+v9 30 70 pulse(0 1.8V 1024ns 1ps 1ps 1024ns 2048ns)
+
+v11 60 70 1.8V
+v12 70 0 0V
+.tran 0.1 2048ns
+.end
+

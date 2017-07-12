@@ -1,0 +1,1000 @@
+   55  boog -h
+   56  boog somador_4bit_vasy_boom_3 somador_4bit_vasy_boom_3_boog
+   57  ls *.vst
+   58  export MBK_IN_LO=vst
+   59  boog somador_4bit_vasy_boom_3 somador_4bit_vasy_boom_3_boog
+   60  xsch -l somador_4bit_vasy_boom_3_boog
+   61  ls *.pat
+   62  yagle
+   63  desb
+   64  ls *.pat
+   65  ren somador_4bit_vasy_boom_3_boog_res.pat somador_4bit_vasy_boom_3_boog_res_20000.pat
+   66  mv somador_4bit_vasy_boom_3_boog_res.pat somador_4bit_vasy_boom_3_boog_res_20000.pat
+   67  asimut -b somador_4bit_vasy_boom_3 somador_4bit_genpat_sem_atraso somador_4bit_vasy_boom_res_3
+   68  history
+   69  asimut somador_4bit_vasy_boom_3_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_res_10000
+   70  genpat somador_4bit_genpat_com_atraso
+   71  asimut somador_4bit_vasy_boom_3_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_res_10000
+   72  genpat somador_4bit_genpat_com_atraso
+   73  asimut somador_4bit_vasy_boom_3_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_res_15000
+   74  genpat somador_4bit_genpat_com_atraso
+   75  asimut somador_4bit_vasy_boom_3_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_res_17500
+   76  history>his.txt
+   77  more his.txt 
+   78     tail his.txt
+   79     tail his.txt;p
+   80     tail his.txt:p
+   81  vasy -a -I vhd somador_4bit somador_4bit_vasy
+   82  asimut -b somador_4bit_vasy somador_4bit_genpat_sem_atraso somador_4bit_vasy_res
+   83  boom -l 3 somador_4bit_vasy somador_4bit_vasy_boom_3
+   84  boom somador_4bit_vasy somador_4bit_vasy_boom
+   85  ls *.vbe
+   86  man proof
+   87  proof somador_4bit_vasy somador_4bit_vasy_boom
+   88  asimut -b somador_4bit_vasy_boom somador_4bit_genpat_sem_atraso somador_4bit_vasy_boom_res
+   89  boom somador_4bit_vasy somador_4bit_vasy_boom
+   90  boom -l 2 somador_4bit_vasy somador_4bit_vasy_boom_2
+   91  proof somador_4bit_vasy somador_4bit_vasy_boom_2
+   92  asimut -b somador_4bit_vasy_boom_2 somador_4bit_genpat_sem_atraso somador_4bit_vasy_boom_2_res
+   93  boog somador_4bit_vasy_boom_3 somador_4bit_vasy_boom_3_boog
+   94  boog somador_4bit_vasy_boom_2 somador_4bit_vasy_boom_2_boog
+   95  ls *.vst
+   96  asimut somador_4bit_vasy_boom_2_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_2_boog_res_17500
+   97  xsch&
+   98  ls *.vst
+   99  man loon
+  100  loon -m 0 somador_4bit_vasy_boom_boog.vst somador_4bit_vasy_boom_boog_loon0.vst
+  101  loon -m 0 somador_4bit_vasy_boom_boog somador_4bit_vasy_boom_boog_loon0
+  102  ls *.vst
+  103  loon -m 4 somador_4bit_vasy_boom_boog somador_4bit_vasy_boom_boog_loon4
+  104  loon -m 4 somador_4bit_vasy_boom_boog_3 somador_4bit_vasy_boom_boog_3_loon4
+  105  ls *.vst
+  106  loon -m 4 somador_4bit_vasy_boom_3_boog somador_4bit_vasy_boom_3_boog_loon4
+  107  loon -m 0 somador_4bit_vasy_boom_3_boog somador_4bit_vasy_boom_3_boog_loon0
+  108  xsch -l somador_4bit_vasy_boom_3_boog_loon0 &
+  109  xsch -l somador_4bit_vasy_boom_boog_loon0 &
+  110  asimut somador_4bit_vasy_boom_2_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_2_boog_res_17500
+  111  ls *.vst
+  112  asimut somador_4bit_vasy_boom_3_boog_loon4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_loo4_res_17500
+  113  genpat somador_4bit_genpat_com_atraso
+  114  asimut somador_4bit_vasy_boom_3_boog_loon4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_loo4_res_15000
+  115  genpat somador_4bit_genpat_com_atraso
+  116  asimut somador_4bit_vasy_boom_3_boog_loon4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_loo4_res_16000
+  117  genpat somador_4bit_genpat_com_atraso
+  118  asimut somador_4bit_vasy_boom_3_boog_loon4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_3_boog_loo4_res_16500
+  119  ls *.vst
+  120  ls *.ioc
+  121  more *.ioc
+  122  ls *.ap
+  123  man ioc
+  124  man ocp
+  125  ocp -rows 6 -ring -ioc somador_4bit.ioc somador_4bit_vasy_boom_3_boog_loon4 somador_4bit_vasy_boom_3_boog_loon4_ocp_rows_6_ioc
+  126  ls *.ioc
+  127  ocp -rows 6 -ring -ioc somador_4bit somador_4bit_vasy_boom_3_boog_loon4 somador_4bit_vasy_boom_3_boog_loon4_ocp_rows_6_ioc
+  128  graal &
+  129  nero somador_4bit_vasy_boom_3_boog_loon4_ocp_rows_6_ioc somador_4bit_vasy_boom_3_boog_loon4_ocp_rows_6_ioc_nero
+  130  ls *.vst
+  131  cp somador_4bit_vasy_boom_3_boog_loon4.vst somador_4bit_core.vst
+  132  nero somador_4bit_core somador_4bit_core_routed
+  133  ls *.ap
+  134  nero -p somador_4bit_vasy_boom_3_boog_loon4_ocp_rows_6_ioc somador_4bit_core somador_4bit_core_routed
+  135  man lvx
+  136  export MBK_OUT_LO=al
+  137  ls *.al
+  138  gedit somador_4bit_chip.al &
+  139  mv somador_4bit_chip.al somador_4bit_chip.al_old
+  140  cougar somador_4bit_core_routed
+  141  ls *.al
+  142  man lvx
+  143  lvx al vst somador_4bit_core_routed somador_4bit_core
+  144  export MBK_IN_LO=al
+  145  asimut somador_4bit_core_routed somador_4bit_genpat_com_atraso somador_4bit_core_routed_res_16500
+  146  man genlib
+  147  pwd
+  148  ls
+  149  cd Desktop/Dropbox/IntroduçãoMicroeletrônica/2012.1/Chip_Daniel_Marcos/
+  150  ls
+  151  ls -l
+  152  cd ../Suzane/
+  153  ls
+  154  ls somador/
+  155  cd ../Joanna_suzanasomador_novo_06/
+  156  ls
+  157  ls *.c
+  158  ls -l 1*
+  159  ls -l -l 1*
+  160  ls -l *.c
+  161  export MBK_OUT_LO=vst
+  162  genlib somador_1bit_genlib3
+  163  genlib somador_1bit_genlib2
+  164  genlib somador_1bit
+  165  ls *.c
+  166  ls *.vst
+  167  xsch &
+  168  ocp somador_1bit_genlib somador_1bit_genlib_ocp
+  169  ls -l *.ap
+  170  graal &
+  171  su
+  172  pwd
+  173  graal &
+  174  ocp -rows 1 somador_1bit_genlib somador_1bit_genlib_ocp_rows_1
+  175  ls -l *.ap
+  176  man ocp
+  177  man nero
+  178  nero -p somador_1bit_genlib_ocp_rows_1 somador_1bit_genlib somador_1bit_genlib_ocp_rows_1_nero
+  179  export MBK_OUT_LO=spi
+  180  cougar -t -ac somador_1bit_genlib_ocp_rows_1_nero
+  181  gedit somador_1bit_genlib_ocp_rows_1_nero.spi &
+  182  gedit somador_1bit_genlib_ocp_rows_1_nero.vst &
+  183  export mbk+in_lo=spi
+  184  export MBK_IN_LO=spi
+  185  xsch &
+  186  ls *.spi
+  187  ls *.cir
+  188  konqueror &
+  189  konsole &
+  190  history > his
+  191  pwd
+  192  ls *.cir
+  193  ls *genpat
+  194  man mbkaloc
+  195  man mbkalloc
+  196  ls *.ap
+  197  export MBK_OUT_LO=vst
+  198  cougar -f somador_4bit_genlib_4rows_nero
+  199  ls *.vst
+  200  ls *.pat
+  201  xsch somador_4bit_genpat_com_atraso.pat
+  202  xpat somador_4bit_genpat_com_atraso.pat
+  203  ls *comatraso*
+  204  ls *com*
+  205  ls *.vst
+  206  asimut somador_4bit_genlib_4rows_nero somador_4bit_genpat_com_atraso.pat somador_4bit_genlib_4rows_nero_res
+  207  ls *.pat
+  208  asimut somador_4bit_genlib_4rows_nero  somador_4bit_genlib_4rows_nero_res
+  209  asimut somador_4bit_genlib_4rows_nero  somador_4bit_genpat_com_atraso somador_4bit_genlib_4rows_nero_res
+  210  xpat&
+  211  graal&
+  212  ls *.vst
+  213  xsch&
+  214  export MBK_OUT_LO=vst
+  215  export MBK_in_LO=vst
+  216  xsch&
+  217  export MBK_IN_LO=vst
+  218  xsch&
+  219  cougar -f somador_4bit_genlib_4rows_nero
+  220  cougar -f -ar somador_4bit_genlib_4rows_nero
+  221  asimut somador_4bit_genlib_4rows_nero  somador_4bit_genpat_com_atraso somador_4bit_genlib_4rows_nero_res
+  222  genpat funcao_s_atraso
+  223  ls *genpat*
+  224  genpat somador_4bit_genpat_com_atraso
+  225  asimut somador_4bit_genlib_4rows_nero  somador_4bit_genpat_com_atraso somador_4bit_genlib_4rows_nero_res
+  226  man cougar
+  227  man vasy
+  228  man boon
+  229  man boom
+  230  ls -l
+  231  ls
+  232  cd Desktop/Dropbox/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  233  ls
+  234  konsole&
+  235  pwd
+  236  konsole&
+  237  pwd
+  238  ls *.c
+  239  more somador_4bit_genpat_com_atraso
+  240  more somador_4bit_genpat_com_atraso.c
+  241  graal&
+  242  pwd
+  243  cd /home/caval/Desktop/Dropbox/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06
+  244  ls
+  245  ls -l
+  246  ls *.vbe
+  247  man loon
+  248  boom 
+  249  boog -l 0 somador_4bit_vasy_boom_2  somador_4bit_vasy_boom_2_boog_0
+  250  ls *.vst
+  251  boog
+  252  boog -m 0 somador_4bit_vasy_boom_2  somador_4bit_vasy_boom_2_boog_0
+  253  ls *boog
+  254  ls *boog*
+  255  ls *boog_*
+  256  ls *boog_0
+  257  ls *boog_*.vst
+  258  boom -l 0 somador_4bit_vasy  somador_4bit_vasy_boom_0
+  259  ls *.vbe
+  260  boog -m 0 somador_4bit_vasy_boom_0  somador_4bit_vasy_boom_0_boog_0
+  261  boog -m 4 somador_4bit_vasy_boom_0  somador_4bit_vasy_boom_0_boog_4
+  262  boog -m 4 somador_4bit_vasy_boom_2  somador_4bit_vasy_boom_0_boog_4
+  263  boog -m 0 somador_4bit_vasy_boom_0  somador_4bit_vasy_boom_0_boog_0
+  264  boog -m 4 somador_4bit_vasy_boom_0  somador_4bit_vasy_boom_0_boog_4
+  265  boog -m 4 somador_4bit_vasy_boom_2  somador_4bit_vasy_boom_2_boog_4
+  266  boog -m 4 somador_4bit_vasy_boom_0  somador_4bit_vasy_boom_0_boog_4
+  267  ls *boom*.vst
+  268  xsch -l somador_4bit_vasy_boom_0_boog_0& 
+  269  xsch -l somador_4bit_vasy_boom_2_boog_4& 
+  270  ls *boom*.vst
+  271  man loon
+  272  loon -m 0 somador_4bit_vasy_boom_0_boog_0 somador_4bit_vasy_boom_0_boog_0_loon_0
+  273  loon -m 4 somador_4bit_vasy_boom_0_boog_0 somador_4bit_vasy_boom_0_boog_0_loon_4
+  274  ls *boom*.vst
+  275  loon -m 4 somador_4bit_vasy_boom_2_boog_4 somador_4bit_vasy_boom_2_boog_4_loon_4
+  276  loon -m 0 somador_4bit_vasy_boom_2_boog_4 somador_4bit_vasy_boom_2_boog_4_loon_0
+  277  ls *.vst
+  278  asimut somador_4bit_vasy_boom_2_boog_4_loon_4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_2_boog_4_loon_4_res_16500
+  279  ls *.vst
+  280  pwd
+  281  ls 
+  282  ls *core*
+  283  cp ls *.vst
+  284  ls *.vst
+  285  ls *core*
+  286  cp somador_4bit_vasy_boom_2_boog_4_loon_4.vst somador_4bit_core.vst1
+  287  cp somador_4bit_core.vst somador_4bit_core.vst_old
+  288  cp somador_4bit_core.vst1 somador_4bit_core.vst
+  289  ls *.ap
+  290  ocp -rows 6 -ioc somador_4bit somador_4bit_core somador_4bit_core_ocp_6rows
+  291  graal &
+  292  ls *core*
+  293  man nero
+  294  nero -p somador_4bit_core_ocp_6rows somador_4bit_core somador_4bit_core_roteado
+  295  graal &
+  296  export MBK_OUT_LO=al
+  297  cougar somador_4bit_core_roteado
+  298  man lvx
+  299  lvx al vst somador_4bit_core_roteado somador_4bit_core
+  300  export MBK_IN_LO=al
+  301  asimut somador_4bit_core_roteado somador_4bit_genpat_com_atraso somador_4bit_core_roteado_res_16500
+  302  man padlib
+  303  man ring
+  304  ls *.rin
+  305  export MBK_IN_LO=vst
+  306  ring somador_4bit_chip somador_4bit_chip
+  307  ls *.ap
+  308  ring somador_4bit_chip somador_4bit_chipls *.al
+  309  ls *.al
+  310  export MBK_OUT_LO=al
+  311  cougar somador_4bit_chip
+  312  ls *.al
+  313  ls *.vst
+  314  lvx al vst somador_4bit_chip somador_4bit_chip
+  315  export MBK_IN_LO=al
+  316  asimut somador_4bit_core_roteado somador_4bit_genpat_com_atraso somador_4bit_core_roteado_res_16500
+  317  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_16500
+  318  export MBK_IN_LO=vst
+  319  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_16500
+  320  lvx al vst somador_4bit_chip somador_4bit_chip
+  321  export MBK_out_LO=vst
+  322  genlib somador_4bit_chip_genlib
+  323  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_16500
+  324  lvx al vst somador_4bit_chip somador_4bit_chip
+  325  asimut -c somador_4bit_chip
+  326  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_16500
+  327  ls *.vst
+  328  gedit somador_4bit_chip.vst &
+  329  export MBK_OUT_LO=al
+  330  export MBK_OUT_LO=vst
+  331  genlib somador_4bit_chip_genlib
+  332  lvx al vst somador_4bit_chip somador_4bit_chip
+  333  genlib somador_4bit_chip_genlib
+  334  lvx al vst somador_4bit_chip somador_4bit_chip
+  335  xsch &
+  336  pwd
+  337  genlib somador_4bit_chip_genlib
+  338  lvx al vst somador_4bit_chip somador_4bit_chip
+  339  ring somador_4bit_chip somador_4bit_chipls *.al
+  340  ring somador_4bit_chip somador_4bit_chipls 
+  341  genlib somador_4bit_chip_genlib
+  342  ring somador_4bit_chip somador_4bit_chip
+  343  xsch&
+  344  genlib somador_4bit_chip_genlib
+  345  ring somador_4bit_chip somador_4bit_chip
+  346  xsch&
+  347  genpat somador_4bit_genpat_com_atraso
+  348  genpat somador_4bit_genpat_chip_com_atraso
+  349  pwd
+  350  cd /home/caval/Dropbox/LinkParaODropMain/Disciplinas_2012_1/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  351  ls
+  352  genpat somador_4bit_genpat_chip_com_atraso
+  353  ls *.vst
+  354  genlib somador_4bit_chip_genlib
+  355  xsch&
+  356  genlib somador_4bit_chip_genlib
+  357  xsch&
+  358  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_16500
+  359  genpat somador_4bit_genpat_chip_com_atraso
+  360  ls *.pat
+  361  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso_com_atraso somador_4bit_chip_res_16500
+  362  ls *.pat
+  363  genpat somador_4bit_genpat_chip_com_atraso
+  364  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso_com_atraso somador_4bit_chip_res_16500
+  365  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_16500
+  366  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso_com_atraso somador_4bit_chip_res_17000
+  367  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  368  graal&
+  369  ring somador_4bit_chip somador_4bit_chip :p
+  370  ring somador_4bit_chip somador_4bit_chip:p
+  371  ring somador_4bit_chip somador_4bit_chip 
+  372  ring somador_4bit_chip somador_4bit_chip
+  373  export MBK_OUT_LO=al
+  374  cougar somador_4bit_chip
+  375  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  376  export MBK_IN_LO=al
+  377  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  378  ls *ap
+  379  cougar somador_4bit_core_routed somador_4bit_core_routed
+  380  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  381  gedit somador_4bit_genpat_chip_com_atraso.pat &
+  382  lvx al vst somador_4bit_chip somador_4bit_chip
+  383  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  384  ls *.al
+  385  gedit somador_4bit_chip.al
+  386  ls *.al
+  387  x2y al vst somador_4bit_core_routed somador_4bit_core_routed_teste
+  388  export MBK_IN_LO=vst
+  389  x2y al vst somador_4bit_chip somador_4bit_chip_teste
+  390  asimut somador_4bit_chip_teste somador_4bit_genpat_chip_com_atraso somador_4bit_chip_teste_res_17000
+  391  xsch somador_4bit_chip_teste
+  392  xsch -l somador_4bit_chip_teste
+  393  export MBK_OUT_LO=vst
+  394  graal&
+  395  cougar somador_4bit_core_routed somador_4bit_core_routed
+  396  cougar somador_4bit_chip somador_4bit_chip_teste
+  397  ls *.vst
+  398  asimut somador_4bit_chip_teste somador_4bit_genpat_chip_com_atraso somador_4bit_chip_teste_res_17000
+  399  vi somador_4bit_chip_teste.vst 
+  400  cougar -f somador_4bit_chip somador_4bit_chip_teste_flat
+  401  asimut somador_4bit_chip_teste_flat somador_4bit_genpat_chip_com_atraso somador_4bit_chip_teste_flat_res_17000
+  402  ls *.c
+  403  graal&
+  404  history
+  405  asimut somador_4bit_vasy_boom_2_boog_4_loon_4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_2_boog_4_loon_4_res_16500
+  406  lvx al vst somador_4bit_chip somador_4bit_chip
+  407  asimut somador_4bit_vasy_boom_2_boog_4_loon_4 somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_2_boog_4_loon_4_res_16500
+  408  export MBK_IN_LO=al
+  409  ls *.al
+  410  asimut somador_4bit_chip_teste somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  411  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  412  ls /usr/share/alliance/cells/padlib/*.vbe
+  413  more /usr/share/alliance/cells/padlib/pck_sp.vbe
+  414  ls /usr/share/alliance/cells/padlib/*.vbe
+  415  more /usr/share/alliance/cells/padlib/pvddeck_sp.vbe
+  416  more /usr/share/alliance/cells/padlib/pck_sp.vbe
+  417  more /usr/share/alliance/cells/padlib/pvddeck_sp.vbe
+  418  export MBK_OUT_LO=vst
+  419  genlib somador_4bit_chip_genlib
+  420  ls *.vst
+  421  xsch
+  422  export MBK_IN_LO=vst
+  423  xsch
+  424  ls *.vst
+  425  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  426  genlib somador_4bit_chip_genlib
+  427  xsch
+  428  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_chip_res_17000
+  429  genlib somador_4bit_chip_genlib
+  430  xsch -l somador_4bit_chip
+  431  vasy somador_4bit
+  432  vasy -a -I vhd somador_4bit
+  433  ls *.vbe
+  434  rm somador_4bit.vbe
+  435  vasy -a -I vhd somador_4bit somador_4bit_vasy.vbe
+  436  ls *.pat
+  437  asimut -b somador_4bit_vasy somador_4bit_genpat_sem_atraso somador_4bit_vasy_res
+  438  ls *.vbe
+  439  boom somador_4bit_vasy somador_4bit_vasy_boom
+  440  asimut -b somador_4bit_vasy_boom somador_4bit_genpat_sem_atraso somador_4bit_vasy_boom_res
+  441  boog somador_4bit_vasy_boom -o somador_4bit_vasy_boom_boog
+  442  asimut somador_4bit_vasy_boom_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_boog_res_17000
+  443  genpat somador_4bit_genpat_com_atraso
+  444  asimut somador_4bit_vasy_boom_boog somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_boog_res_20000
+  445  loon somador_4bit_vasy_boom_boog somador_4bit_vasy_boom_boog_loon
+  446  asimut somador_4bit_vasy_boom_boog_loon somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_boog_loon_res_20000
+  447  ls *.vst
+  448  ls -l *.vst
+  449  ocp -rows 6 -ring -ioc somador_4bit somador_4bit_vasy_boom_boog_loon somador_4bit_vasy_boom_boog_loon_ocp_rows6_ioc
+  450  xsch somador_4bit_vasy_boom_boog_loon
+  451  xsch -l somador_4bit_vasy_boom_boog_loon
+  452  ls *.vbe
+  453  cp somador_4bit_vasy.vbe.vbe somador_4bit_vasy.vbe
+  454  boom somador_4bit_vasy somador_4bit_vasy_boom
+  455  vasy -a -I vhd somador_4bit somador_4bit_vasy
+  456  rm somador_4bit_vasy.vbe
+  457  vasy -a -I vhd somador_4bit somador_4bit_vasy
+  458  boom somador_4bit_vasy somador_4bit_vasy_boom
+  459  boog somador_4bit_vasy_boom -o somador_4bit_vasy_boom_boog
+  460  xsch
+  461  loon somador_4bit_vasy_boom_boog somador_4bit_vasy_boom_boog_loon
+  462  asimut somador_4bit_vasy_boom_boog_loon somador_4bit_genpat_com_atraso somador_4bit_vasy_boom_boog_loon_res_20000
+  463  ls *.vst
+  464  xsch -l somador_4bit_vasy_boom_boog_loon
+  465  ocp -rows 6 -ring -ioc somador_4bit somador_4bit_vasy_boom_boog_loon somador_4bit_vasy_boom_boog_loon_ocp_rows6_ioc
+  466  ls *.ap
+  467  nero -p somador_4bit_core_ocp_6rows somador_4bit_core somador_4bit_core_roteado
+  468  nero -p somador_4bit_core_ocp_rows6 somador_4bit_core somador_4bit_core_roteado
+  469  ls *.vst
+  470  cp somador_4bit_vasy_boom_boog_loon.vst somador_4bit_core.vst
+  471  nero -p somador_4bit_core_ocp_rows6 somador_4bit_core somador_4bit_core_roteado
+  472  nero -p somador_4bit_core_placed somador_4bit_core somador_4bit_core_roteado
+  473  ocp -rows 6 -ring -ioc somador_4bit somador_4bit_vasy_boom_boog_loon somador_4bit_core_placed
+  474  graal -l 'somador_4bit_core_placed'
+  475  nero -p somador_4bit_core_placed somador_4bit_core somador_4bit_core_roteado
+  476  export MBK_OUT_LO=al
+  477  cougar somador_4bit_core_roteado somador_4bit_core
+  478  ls *.al
+  479  cougar somador_4bit_core_roteado somador_4bit_core_roteado
+  480  ls *.al
+  481  rm somador_4bit_core.al
+  482  ls *.vst
+  483  lvx al vst somador_4bit_core_roteado somador_4bit_core
+  484  asimut somador_4bit_core_roteado somador_4bit_genpat_com_atraso somador_4bit_core_roteado_res_20000
+  485  export MBK_INLO=al
+  486  asimut somador_4bit_core_roteado somador_4bit_genpat_com_atraso somador_4bit_core_roteado_res_20000
+  487  export MBK_IN_LO=al
+  488  asimut somador_4bit_core_roteado somador_4bit_genpat_com_atraso somador_4bit_core_roteado_res_20000
+  489  ls *.al
+  490  xsch -l somador_4bit_core_roteado.al
+  491  rm somador_4bit_core_routed.al
+  492  ring somador_4bit_chip somador_4bit_chip
+  493  genlib somador_4bit_chip
+  494  lls *.c
+  495  ls *.c
+  496  vi somador_4bit_genlib.c
+  497  vi somador_4bit_chip_genlib.c
+  498  genlib somador_4bit_chip_genlib
+  499  xsch -l somador_4bit_chip
+  500  ls *.al
+  501  rm somador_4bit_chip.al 
+  502  export MBK_IN_LO=vst
+  503  genlib somador_4bit_chip_genlib
+  504  export MBK_IN_LO=al
+  505  export MBK_OUT_LO=vst
+  506  genlib somador_4bit_chip_genlib
+  507  export MBK_IN_LO=vst
+  508  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_res_20000
+  509  x2y vst alsomador_4bit_core_roteado
+  510  x2y vst al somador_4bit_core_roteado
+  511  x2y vst al somador_4bit_core_roteado somador_4bit_core_roteado
+  512  x2y al vst somador_4bit_core_roteado somador_4bit_core_roteado
+  513  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_res_20000
+  514  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_res_30000
+  515  asimut somador_4bit_chip somador_4bit_genpat_chip_com_atraso somador_4bit_res_20000
+  516  ring somador_4bit_chip somador_4bit_chip
+  517  graal 
+  518  export MBK_OUT_LO=al
+  519  cougar somador_4bit_chip somador_4bit_chip_e
+  520  ls *.al
+  521  lvx al vst somador_4bit_chip_e somador_4bit_chip
+  522  export MBK_IN_LO=al
+  523  asimut somador_4bit_chip_e somador_4bit_genpat_chip_com_atraso somador_4bit_chip_e_res_20000
+  524  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_20000
+  525  export MBK_IN_LO=vst
+  526  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_chip_res_20000
+  527  asimut somador_4bit_chip somador_4bit_genpat_com_atraso somador_4bit_res_20000
+  528  history>historia.txt
+  529  gedit historia.txt &
+  530  pwd
+  531  cd Dropbox/LinkParaODropMain/Disciplinas_2012_1/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  532  ls
+  533  ma ls
+  534  man ls
+  535  ls -lt
+  536  ls -ltr
+  537  xsch -l somador_4bit_vasy_boom_boog_loon.vst
+  538  xsch -l somador_4bit_core_roteado.vst
+  539  xsch -l somador_4bit_core_roteado.al
+  540  ls -ltr
+  541  gedit somador_4bit_chip_genlib.c
+  542  pwd
+  543  cd Dropbox/LinkParaODropMain/Disciplinas_2012_1/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  544  ls -lrt
+  545  lvx al vst somador_4bit_chip
+  546  lvx al vst somador_4bit_chip somador_4bit_chip
+  547  lvx al vst somador_4bit_chip_e somador_4bit_chip
+  548  ls -lrt
+  549  ls -lrt *.pat
+  550  more somador_4bit_chip_res_20000.pat
+  551  yumex &
+  552  man pck_sp
+  553  man ring
+  554  graal &
+  555  ls -lrt *.pat
+  556  cd Dropbox/LinkParaODropMain/Disciplinas_2012_1/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  557  ls -lrt *.pat
+  558  tail historia.txt 
+  559  ls *.al
+  560  export MBK_IN_LO=vst
+  561  xsch -l somador_4bit_chip
+  562  cougar
+  563  graal
+  564  ls *.txt
+  565  cd Dropbox/LinkParaODropMain/Disciplinas_2012_1/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  566  ls
+  567  gedit historia.txt &
+  568  ls 8.al
+  569  ls *.al
+  570  ls *.pat
+  571  export MBK_IN_LO=al
+  572  asimut somador_4bit_core_roteado somador_4bit_core_roteado_res_20000 somador_4bit_core_roteado_al_res_20000
+  573  export MBK_IN_LO=vst
+  574  ls *.vst
+  575  asimut somador_4bit_chip somador_4bit_core_roteado_res_20000 somador_4bit_chip_res_20000
+  576  xsch -l somador_4bit_chip
+  577  graal &
+  578  su -
+  579  ls -la
+  580  konqueror&
+  581  konsole &
+  582  echo &DISPLAY
+  583  lxsession&
+  584  lxpanel&
+  585  ifconfig
+  586  konsole&
+  587  lxsession&
+  588  lxmenu&
+  589  lxterminal &
+  590  lxpanel*
+  591  lxpanel&
+  592  konsole&
+  593  lxsession&
+  594  lxmusic
+  595  graal &
+  596  lxmusic &
+  597  lxsession&
+  598  dropbox 
+  599  dropbox status
+  600  dropbox start
+  601  dropbox autostart
+  602  dropbox autostart y
+  603  dropbox status
+  604  dropbox 
+  605  dropbox filestatus
+  606  ps -ax |grep firefox
+  607  firefox &
+  608  kill -9 n11900
+  609  kill -9 11900
+  610  firefox &
+  611  PWD
+  612  pwd
+  613  cd Dropbox/LinkParaODropMain/Disciplinas_2012_1/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  614  ls
+  615  ls -lrt
+  616  xsch -l somador_4bit_chip
+  617  xsch -l somador_4bit_chip &
+  618  ls -lrt
+  619  graal -l somador_4bit_chip
+  620  ls *.al
+  621  lvx al vst somador_4bit_chip_e somador_4bit_chip
+  622  firefox &
+  623  ps -ax |grep firefox
+  624  kill -9 15229
+  625  ps -ax |grep firefox
+  626  kill -9 9904
+  627  kill -9 10698
+  628  ps -ax |grep firefox
+  629  kill -9 11557
+  630  ps -ax |grep firefox
+  631  kill -9 11557
+  632  kill -9 15315
+  633  ps -ax |grep firefox
+  634  kill -9 15317
+  635  su -c 'kill -9 11557'
+  636  ps -ax |grep firefox
+  637  firefox &
+  638  ping www.ufpb.br
+  639  ifconfig
+  640  ping www.ufpb.br
+  641  ping 150.165.130.216
+  642  service network restart
+  643  su -
+  644  pwd
+  645  ls
+  646  cd Downloads/
+  647  ls
+  648  ls firefox
+  649  su -
+  650  ps -ax |grep firefox
+  651  lxsession&
+  652  dropbox status
+  653  dropbox restart
+  654  dropbox stop
+  655  dropbox start
+  656  ps -ax
+  657  su -
+  658  dropbox status
+  659  dropbox start
+  660  su -c 'dropbox start'
+  661  dropbox status
+  662  lxsession&
+  663  konsole&
+  664  su -
+  665  ls
+  666  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/
+  667  ls
+  668  spiceopus&
+  669  cd
+  670  cd Desktop/Dropbox/IntroduçãoMicroeletrônica/2012.1/Joanna_suzanasomador_novo_06/
+  671  ls
+  672  gedit &
+  673  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  674  ls
+  675  spiceopus&
+  676  su -
+  677  xhost +
+  678  konsole&
+  679  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  680  spiceopus&
+  681  ls
+  682  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  683  ls
+  684  pwd
+  685  gedit resistencia1.spi &
+  686  spiceopus&
+  687  ls
+  688  ls -l
+  689  spiceopus&
+  690  ls
+  691  konsole&
+  692  konqueror &
+  693  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  694  ls
+  695  spiceopus&
+  696  gedit &
+  697  konsole&
+  698  mount
+  699  mount /dev/sdac /media
+  700  su -
+  701  ls usb
+  702  lsusb
+  703  ls -l /dev/disk/by-id
+  704  fdisk /dev/sdb
+  705  su -
+  706  pwd
+  707  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  708  ls
+  709  mkdir graal
+  710  cd graal
+  711  ls
+  712  graal &
+  713  ls
+  714  gedit inversor_1.ap &
+  715  cougar -t inversor_1&
+  716  man cougar
+  717  man cougar>cougar.txt
+  718  gedit cougar.txt 
+  719  cougar -t -ac inversor_1&
+  720  export MBK_OUT_LO=spi
+  721  cougar -t -ac inversor_1&
+  722  ls
+  723  more inversor_1.spi 
+  724  cougar -t -ac inversor_1&
+  725  gedit inversor_1.spi 
+  726  cougar -t -ac inversor_1&
+  727  gedit inversor_1.spi 
+  728  graal &
+  729  ls
+  730  gedit inversor_1_1.ap &
+  731  man graal
+  732  man cougar
+  733  cougar -t -ac inversor_1_1&
+  734  export MBK_OUT_LO=spi
+  735  cougar -t -ac inversor_1_1
+  736  ls
+  737  gedit inversor_1_1.cir
+  738  ls
+  739  spiceopus&
+  740  cougar -t -ac inversor_1_1_solto
+  741  more inversor_1_1_solto.spi 
+  742  ls
+  743  cougar -t -ac inversor_1_1_solto
+  744  cougar -t -ar inversor_1_1_solto
+  745  cougar -t -ar inversor_1_1
+  746  cougar -t -ar inversor_1
+  747  graal&
+  748  su -
+  749  ls
+  750  export MBK_OUT_LO=spi
+  751  cougar -t -ac inversor_1
+  752  cd ..
+  753  cd Concepção\ Estruturada\ de\ Circuitos\ Integrados/
+  754  cd Sala\ de\ aula/
+  755  ls
+  756  cp -a /usr/share/doc/alliance-doc-5.0/alliance-examples/mipsR3000 .
+  757  ls
+  758  cd mipsR3000/
+  759  ls
+  760  cd asm/
+  761  ls
+  762  cd ../sce/
+  763  ls
+  764  make clean
+  765  make
+  766  ls
+  767  ls -l
+  768  pwd
+  769  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Concepção\ Estruturada\ de\ Circuitos\ Integrados/Sala\ de\ aula/
+  770  ls
+  771  cd mipsR3000/sce/
+  772  ls
+  773  xsch&
+  774  pwd
+  775  ls
+  776  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/graal/
+  777  ls
+  778  graal&]
+  779  export MBK_OUT_LO=spi
+  780  cougar -t -ac inversor_1
+  781  gedit &
+  782  spiceopus&
+  783  konqueror &
+  784  spiceopus&
+  785  pwd
+  786  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  787  ls
+  788  spiceopus&
+  789  konsole &
+  790  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/
+  791  ls
+  792  cd Sala\ de\ aula/ls
+  793  cd Sala\ de\ aula/
+  794  ls
+  795  spiceopus&
+  796  gedit &
+  797  pwd
+  798  ls
+  799  cd Dropbox/
+  800  ls
+  801  cd LinkParaODropMain/
+  802  ls
+  803  cd Disciplinas_2013_1/
+  804  ls
+  805  cd Disciplinas_2013_1/
+  806  pwd
+  807  ls
+  808  ls Introdução\ à\ Microeletrônica/
+  809  cp -a Introdução\ à\ Microeletrônica/Sala\ de\ aula/ .
+  810  ls
+  811  mv Sala\ de\ aula/ Sala\ de\ aula_intro_micro
+  812  ls
+  813  pwd
+  814  ls
+  815  ls ..
+  816  ls
+  817  pwd
+  818  cd Sala\ de\ aula_intro_micro/
+  819  ls
+  820  spiceopus&
+  821  konsole &
+  822  cd Sala\ de\ aula_intro_micro/
+  823  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Sala\ de\ aula_intro_micro/
+  824  ls
+  825  spiceopus&
+  826  gedit &
+  827  ls
+  828  pwd
+  829  ls
+  830  pwd
+  831  konqueror &
+  832  su -
+  833  dropbox 
+  834  dropbox stop
+  835  dropbox start
+  836  ping 150.165.202.5
+  837  ping 150.165.202.2
+  838  ping 150.165.202.1
+  839  ping www.uol.com.br
+  840  ifconfig
+  841  su -
+  842  pwd
+  843  dropbox status
+  844  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/graal/
+  845  ls
+  846  graal &
+  847  pwd
+  848  spiceopus&
+  849  export MBK_OUT_LO=spi
+  850  cougar -t -ac inversor_1
+  851  cougar -t -ac inversor_1_1
+  852  su -
+  853  ls
+  854  pwd
+  855  ls -a
+  856  cd ..
+  857  ls
+  858  cd ..
+  859  ls
+  860  cd ..
+  861  ls
+  862  cd Sala\ de\ aula_intro_micro/
+  863  ls
+  864  pwd
+  865  cd ../Introdução\ à\ Microeletrônica/Sala\ de\ aula/
+  866  ls
+  867  cd graal/
+  868  ls
+  869  spiceopus&
+  870  su -
+  871  LS
+  872  ls
+  873  cd ..
+  874  cd Concepção\ Estruturada\ de\ Circuitos\ Integrados/
+  875  ls
+  876  cd Projetos\ Arquitetura/
+  877  ls
+  878  find . Mars.jar
+  879  cd Rocha-PPGI2006-Arquitetura/
+  880  ls
+  881  cd Mi
+  882  cd Mips/
+  883  ls
+  884  cd Mips50/
+  885  ls
+  886  ls src/
+  887  cd src/mips50/
+  888  ls
+  889  java Mips.java
+  890  cd ../../../../
+  891  cd ..
+  892  ls
+  893  find . Meumips
+  894  pwd
+  895  ls
+  896  cd BrilhoMult/
+  897  ls
+  898  cd MeuMars/
+  899  ls
+  900  cd ..
+  901  ls
+  902  cd Manuela/
+  903  ls
+  904  cd ..
+  905  ls
+  906  cd BrilhoMult/
+  907  ls
+  908  java -jar Mars.jar
+  909  gedit fibonacci.asm
+  910  java -jar Mars.jar &
+  911  ls
+  912  java -jar MeuMars.jar &
+  913  ls
+  914  cd ..
+  915  ls
+  916  cd ..
+  917  ls
+  918  cd Thaise/
+  919  ls
+  920  java -jar Mips.jar &
+  921  gedit Mips.jar &
+  922  ls *.java
+  923  more Main.java 
+  924  pwd
+  925  ls |more
+  926  jar -tvf Mips.jar
+  927  more  manifest.mf 
+  928  su -
+  929  netbeans &
+  930  cd ..
+  931  cd Rocha-PPGI2006-Arquitetura/
+  932  ls
+  933  cd Mips/
+  934  ls
+  935  cd Mips50/
+  936  ls
+  937  cd ..
+  938  ls
+  939  netbeans &
+  940  ls
+  941  cs Mips50/
+  942  cd Mips50/dist/
+  943  ls
+  944  java -jar Mips50.jar 
+  945  cd
+  946  cd ~/Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/
+  947  cd Sala\ de\ aula/graal/
+  948  ls
+  949  spiceopus&
+  950  su -
+  951  mount
+  952  umount /media/NAYARA 
+  953  ping www.uol.com.br
+  954  dhclient
+  955  kill -9 7654
+  956  su -
+  957  rdesktop -f &
+  958  rdesktop -f 150.165.130.4 &
+  959  rdesktop -f 150.165.130.4 
+  960  rdesktop -f 150.165.202.4 
+  961  ls
+  962  cd Desktop/nand/
+  963  ls
+  964  spiceopus&
+  965  pwd
+  966  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/somador/
+  967  ls *.vst
+  968  gedit somador_1bit.vst &
+  969  xsch &
+  970  graal&
+  971  cd
+  972  cd Dropbox/LinkParaODropMain/Disciplinas_2013_1/Concepção\ Estruturada\ de\ Circuitos\ Integrados/Sala\ de\ aula/Genpat/
+  973  ls
+  974  genpat teste_genpat
+  975  genpat maquina_genpat
+  976  ls
+  977  cd ..-..//////////////////////////////////////////////
+  978  cd ../../../
+  979  cd Introdução\ à\ Microeletrônica/Sala\ de\ aula/somador/
+  980  ls 
+  981  export MBK_OUT_LO=vst
+  982  ls *.vst
+  983  gedit somador_1bit.vst&
+  984  xsch &
+  985  xsch -l 'somador_1bit'&
+  986  graal &
+  987  konqueror &
+  988  man DEC
+  989  dropbox status
+  990  dropbox stop
+  991  dropbox start
+  992  dropbox status
+  993  pwd
+  994  cd ../..
+  995  ls
+  996  cd Turma_2_tarde/ALISON\ LACERDA\ WANDERLEY\ B/
+  997  ls
+  998  cd somador_genlib/
+  999  ls
+ 1000  cd /home/caval/Dropbox/LinkParaODropMain/Disciplinas_2013_1/Concepção Estruturada de Circuitos Integrados/Sala de aula
+ 1001  cd /home/caval/Dropbox/LinkParaODropMain/Disciplinas_2013_1/Concepção\ Estruturada\ de\ Circuitos\ Integrados/Sala\ de\ aula
+ 1002  ls
+ 1003  vi somador_4bit.vhd 
+ 1004  vi teste2.vhd 
+ 1005  vasy -I vhd -a teste2 teste2
+ 1006  vi teste2.vhd 
+ 1007  vasy -I vhd -a teste2 teste2
+ 1008  ls
+ 1009  \rm teste2.vbe 
+ 1010  ls *.v*
+ 1011  vasy -I vhd -a teste2 teste2
+ 1012  cd /home/caval/Dropbox/LinkParaODropMain/Disciplinas_2013_1/Introdução\ à\ Microeletrônica/Sala\ de\ aula/somador/
+ 1013  ls
+ 1014  gepat somador_4bit_genpat_sem_atraso
+ 1015  genpat somador_4bit_genpat_sem_atraso
+ 1016  xpat -l somador_4bit_genpat_sem_atraso.pat
+ 1017  genpat somador_4bit_genpat_com_atraso
+ 1018  xpat -l somador_4bit_genpat_com_atraso.pat
+ 1019  xpat -l somador_4bit_genpat_com_atraso.pat&
+ 1020  ls *.ap
+ 1021  export MBK_OUT_LO=vst
+ 1022  cougar -f somador_4bit_genlib_ocp_nero
+ 1023  ls *.vst
+ 1024  man asimut
+ 1025  asimut somador_4bit_chip somador_4bit_core_roteado_res_20000 somador_4bit_chip_res_20000
+ 1026  genpat somador_4bit_genpat_com_atraso
+ 1027  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_1000
+ 1028  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_10000
+ 1029  genpat somador_4bit_genpat_com_atraso
+ 1030  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_10000
+ 1031  genpat somador_4bit_genpat_com_atraso
+ 1032  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_20000
+ 1033  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_20000 >20000.txt
+ 1034  more 20000.txt 
+ 1035  genpat somador_4bit_genpat_com_atraso
+ 1036  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_20000 >15000.txt
+ 1037  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_15000 >15000.txt
+ 1038  genpat somador_4bit_genpat_com_atraso
+ 1039  asimut somador_4bit_genlib_ocp_nero somador_4bit_genpat_com_atraso somador_4bit_genlib_ocp_nero_res_17000 >17000.txt
+ 1040  more 17000.txt 
+ 1041  xpat -l somador_4bit_genlib_ocp_nero_res_17000
+ 1042  ls *.vhd
+ 1043  man asimut
+ 1044  vasy -I vhd -a somador_4bit
+ 1045  ls *.vbe
+ 1046  gedit somador_4bit.vbe&
+ 1047  asimut -b somador_4bit somador_4bit_genpat_sem_atraso somador_4bit_vbe_res
+ 1048  hystory >comandos.txt
+ 1049  history >comandos.txt
+ 1050  more comandos.txt 
+ 1051                 tail comandos.txt 
+ 1052   asimut -b somador_4bit somador_4bit_genpat_sem_atraso somador_4bit_vasy_res
+ 1053                 tail comandos.txt 
+ 1054  history >comandos.txt

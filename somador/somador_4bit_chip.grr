@@ -1,0 +1,4 @@
+rm -f somador_4bit_chip somador_4bit_chip.o somador_4bit_chip.exe
+cc  -c -g -I/usr/lib64/alliance/include  somador_4bit_chip.c
+cc  -o somador_4bit_chip somador_4bit_chip.o -L/usr/lib64/alliance/lib -lBvl -lBeh -lBhl -lLog -lCst -lMgn -lMlu -lMlo -lMal -lMcl -lMgl -lMel -lMhl -lMsl -lMvg -lRcn -lMpu -lMph -lMap -lMcp -lMmg -lMut -lm
+rm -f somador_4bit_chip.o

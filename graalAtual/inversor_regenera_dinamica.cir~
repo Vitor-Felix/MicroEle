@@ -1,0 +1,27 @@
+*
+* Curvas da regeneração dinãmica do inversor
+
+* Circuit description
+
+.include inversor_6.spi
+.include inversor_6_gordo.sp
+
+V1 20 30 1.8V
+V2 10 30 pulse (0.7V 1.1V 10ns 1ps 1ps 10ns 20ns)
+
+*   a vdd vss y  
+ 
+X1 10 20 30 40 inversor_6
+X2 10 20 30 41 inversor_6
+X3 41 20 30 42 inversor_6
+X4 42 20 30 43 inversor_6
+X5 10 20 30 44 inversor_6_gordo
+V3 30 0 DC 0
+
+.model tp pmos level = 54
+.model tn nmos level = 54
+
+* Analysis
+
+.tran 0.00001 30ns
+.end

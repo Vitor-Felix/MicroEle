@@ -1,0 +1,20 @@
+* Spice description of inversor_6
+* Spice driver version 270587057
+* Date ( dd/mm/yyyy hh:mm:ss ): 28/10/2015 at 15:40:00
+
+* INTERF a vdd vss y 
+
+
+.subckt inversor_6 1 2 4 3 
+* NET 1 = a
+* NET 2 = vdd
+* NET 3 = y
+* NET 4 = vss
+Mtr_00002 3 1 2 2 tp L=1U W=7U AS=14P AD=14P PS=18U PD=18U 
+Mtr_00001 3 1 4 4 tn L=1U W=3U AS=6P AD=6P PS=10U PD=10U 
+C4 1 4 1.727e-14
+C3 2 4 9.03e-15
+C2 3 4 1.003e-14
+C1 4 4 9.03e-15
+.ends inversor_6
+
